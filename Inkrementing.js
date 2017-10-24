@@ -8,7 +8,7 @@ window.setInterval(refreshNumbers, 200);
 $("#stringBut").click(function (){
 			
 		Player.Strings++;
-		if (Player.Strings > 10) { AddRandomBasicParticle(); };   		// add 1 to one with a probability
+		if (Player.Strings > 9) { AddRandomBasicParticle(); };   		// add 1 to one with a probability
 		
 		});
 
