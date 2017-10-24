@@ -12,7 +12,7 @@
 </head>
 
 <body>
-	<div class = 'wrapper' id = 'wrapper'>
+	<div class = 'container-fluid' id = 'wrapper'>
 		<header>
 			<div class="jumbotron jumbotron-fluid" id="banner">       
 			<div class="parallax text-center" style="background-image:url(img/solar.jpg)">
@@ -27,125 +27,131 @@
 			</div>
 			</header>
 
-		<div class = "Floor">
+<div class = "Floor">
 
-			<div class = 'row'>
+	<div class = 'row'>
 			
-				<div class = "col-sm-2">
-				<div class = "divStrings">
-					<p>	
-						Strings: <a id = 'counterStrings'> 0 </a>
-						<button id = "stringBut"> Ink </button>
-					</p>
+		<div class = "col-sm-2">
+		<div class = "divStrings">
+			<p>	
+			Strings: <a id = 'counterStrings'> 0 </a>
+			<br>
+			<button id = "stringBut"> Ink </button>
+			</p>
 
-					<p class = 'boost'>
-						( <a id = 'boostStrings'></a>/sec )
-					</p>
+			<p class = 'boost'>
+			( <a id = 'boostStrings'></a>/sec )
+			</p>
 
-					</div>
-					</div>
+		</div>
+		</div>
+
+		<div class = 'divUps'>
+		<div class = "col-sm-2">
+
+			Up Quarks: <a id = 'counterUps'> 0 </a>
+			<br>
+			<button id = "upsBut"> Ink </button>
+		</div>
+		</div> 
+			
+
+
+		<div class = 'divDowns'>
+		<div class = "col-sm-2">
+
+			Down Quarks: <a id = 'counterDowns'> 0 </a>
+			<br>
+			<button id = "downsBut"> Ink </button>
+		</div>
+		</div> 
+
+					
 				
+	</div>
 
 
-				<div class = 'divAtoms'>
-				<div class = "col-sm-2">
-				<div class = "divHydrogen">
+
+
+				
+			
+
+
+	<div class = "row">
+		<div class = 'col-sm-2'>
+		<div class = 'divElectrons'>
+				
+			Electrons: <a id = 'counterElectrons'> 0 </a>
+			<br>
+			<button id = "electronsBut">Ink</button>
 						
-						Hydrogen: <a id = 'counterHydrogen'> 0 </a>
-						<button id = "hydrogenBut"> Ink </button>
-				</div>
-				</div> 
-				</div>
-
-				<div class = 'divActions'>
-				<div class = "col-sm-2">
-					<div class = "divEnergyLvl1">
-						Synth H2 <a id = 'counterH2'> 0 </a>
-						 <button id = 'h2But'> Ink </button> 
-					</div>
-				</div>
-				</div>
-			
-			</div>
+		</div>
+		</div>
 
 
-			<div class = 'row'>
-					
-					<div class = 'col-sm-2'>
-					<div class = 'divElectrons'>
-				
-						Electrons: <a id = 'counterElectrons'> 0 </a>
-						<button id = "electronsBut">Ink</button>
-						
-					</div>
-					</div>
-
-
-					<div class = "col-sm-2">
-					<div class = 'divProtons'>
-							Protons: <a id = 'counterProtons'> 0 </a>
-							<button id = "protonsBut"> Ink </button>
-					</div>
-					</div>
+		<div class = "col-sm-2">
+		<div class = 'divProtons'>
+			Protons: <a id = 'counterProtons'> 0 </a>
+			<br>
+			<button id = "protonsBut"> Ink </button>
+		</div>
+		</div>
 					
 
-					<div class = "col-sm-2">
-					<div class = "divNeutrons">
+		<div class = "col-sm-2">
+		<div class = "divNeutrons">
 
-						Neutrons: <a id = 'counterNeutrons'> 0 </a>
-						<button id = "neutronsBut"> Ink </button>
-					</div>
-					</div>
-
-
-					<div class = 'divAtoms'>
-					<div class = "col-sm-2">
-					<div class = "divHelium">
-						Helium: <a id = 'counterHelium'> 0 </a>
-						<button id = 'heliumBut'> Ink </button>
-					</div>
-					</div>
-					</div>
-				
-					
-			</div>
-
-			<div class = 'row'>		
-
-				<div class = 'divUps'>
-				<div class = "col-sm-2">
-
-						Up Quarks: <a id = 'counterUps'> 0 </a>
-						<button id = "upsBut"> Ink </button>
-				</div>
-				</div> 
-			
-
-
-
-					
-				
-			</div>
-
-			<div class = 'row'>
-
-				<div class = 'divDowns'>
-				<div class = "col-sm-2">
-
-						Down Quarks: <a id = 'counterDowns'> 0 </a>
-						<button id = "downsBut"> Ink </button>
-				</div>
-				</div> 
-			
-				
-			</div>
-
-								
+			Neutrons: <a id = 'counterNeutrons'> 0 </a>
+			<br>
+			<button id = "neutronsBut"> Ink </button>
+		</div>
+		</div>		
 
 	</div>
 
 
-			</div>
+	<div class = 'row'>
+		<div class = 'divAtoms'>
+		<div class = "col-sm-2">
+		<div class = "divHydrogen">
+						
+			Hydrogen: <a id = 'counterHydrogen'> 0 </a>
+			<br>
+			<button id = "hydrogenBut"> Ink </button>
+		</div>
+		</div> 
+		</div>
+
+		<div class = 'divActions'>
+		<div class = "col-sm-2">
+		<div class = "divEnergyLvl1">
+			Synth H2 <a id = 'counterH2'> 0 </a>
+			<br>			
+			<button id = 'h2But'> Ink </button> 
+		</div>
+		</div>
+		</div>
+
+				
+
+		<div class = 'divAtoms'>
+		<div class = "col-sm-2">
+		<div class = "divHelium">
+			Helium: <a id = 'counterHelium'> 0 </a>
+			<br>
+			<button id = 'heliumBut'> Ink </button>
+		</div>
+		</div>
+		</div>
+				
+					
+	</div>
+
+
+								
+</div>
+
+</div>
 
 <script src="js/Inkrementing.js"></script>
 <script src="js/Player.js"></script>
