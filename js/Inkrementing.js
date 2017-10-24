@@ -6,11 +6,13 @@ window.setInterval(refreshNumbers, 200);
 
 	
 $("#stringBut").click(function (){
-			
+		lastString=Player.Strings;	
 		Player.Strings++;
-		if (Player.Strings > 9) { AddRandomBasicParticle(); };   		// add 1 to one with a probability
+		if( Player.Strings - lastString > 0) {
+		AddRandomBasicParticle();   		// add 1 to one with a probability
+		};
 		
-		});
+});
 
 
 $('#protonsBut').click(function () {

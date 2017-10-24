@@ -1,5 +1,21 @@
+function AddRandomBasicParticle() {
+			let upProb = 33.3;
+			let downProb = 66.6;
+			let electronProb = 99.9;
+			let randomNumber = getProbability(1, 100);
+
+				//let ups_sumbol = "Ups";
+
+			if (randomNumber < upProb) {Player.Ups=Player.Ups+1}
+			else if (randomNumber < downProb) {Player.Downs=Player.Downs + 1}			
+			else {Player.Electrons=Player.Electrons + 0.1};
+	};		
+
+
+
 function boosterStrings() {
 	Player.Strings++;
+	AddRandomBasicParticle();
 };
 
 function Automation (Boost) {
@@ -44,18 +60,4 @@ function getProbability(min, max) {
  		return Math.random() * (max - min) + min;
 };
 
-
-function AddRandomBasicParticle() {
-			let upProb = 33.3;
-			let downProb = 66.6;
-			let electronProb = 99.9;
-			let randomNumber = getProbability(1, 100);
-			Player.Strings--;
-
-				//let ups_sumbol = "Ups";
-
-			if (randomNumber < upProb) {Player.Ups=Player.Ups+1}
-			else if (randomNumber < downProb) {Player.Downs=Player.Downs + 1}			
-			else {Player.Electrons=Player.Electrons + 0.1};
-	};		
 
