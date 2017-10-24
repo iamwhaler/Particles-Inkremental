@@ -1,3 +1,6 @@
+function boosterStrings() {
+	Player.Strings++;
+};
 
 function Automation (Boost) {
 			
@@ -31,9 +34,6 @@ function refreshNumbers() {
 
 		};
 
-function boosterStrings() {
-	
-};
 
 function Incrementing (particle, increase) {
 		particle = particle + increase;
@@ -54,8 +54,8 @@ function AddRandomBasicParticle() {
 
 				//let ups_sumbol = "Ups";
 
-			if (randomNumber < upProb) {Player.Ups=Player.Ups+0.1}
-			else if (randomNumber < downProb) {Player.Downs=Player.Downs + 0.1}			
+			if (randomNumber < upProb) {Player.Ups=Player.Ups+1}
+			else if (randomNumber < downProb) {Player.Downs=Player.Downs + 1}			
 			else {Player.Electrons=Player.Electrons + 0.1};
 	};		
 
