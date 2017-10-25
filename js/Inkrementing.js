@@ -60,7 +60,9 @@ $('#h2But').click(function () {  // needed to add adding H2 randomly
 				Player.Hydrogen = Player.Hydrogen - 2;
 				Player.H2 = Player.H2 + 1;
 				if (Player.H2 >= 2) {
-				 setInterval ("boosterStrings()", 1000);
+				 setInterval ("boosterStrings(1)", 1000);
+				;
+
 				}
 				};
 
