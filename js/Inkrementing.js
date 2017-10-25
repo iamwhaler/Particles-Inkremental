@@ -54,7 +54,7 @@ $('#hydrogenBut').click(function () {
 
 		});
 
-$('#h2But').click(function () {
+$('#h2But').click(function () {  // needed to add adding H2 randomly
 				
 		if (Player.Hydrogen >= 2) {
 				Player.Hydrogen = Player.Hydrogen - 2;

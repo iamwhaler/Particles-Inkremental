@@ -16,22 +16,8 @@ function AddRandomBasicParticle() {
 function boosterStrings() {
 	Player.Strings++;
 	AddRandomBasicParticle();
-};
+};	
 
-function Automation (Boost) {
-			
-			
-		Player.Energy = Player.Energy + Boost; // maybe later change Energylvl to have it as a massive of data
-			
-		LastEnergy=Energy
-		LastDifference = Energy - LastEnergy;
-			
-		if (LastDifference>2) {			
-			Boost = Boost/2;
-		};
-
-
-		};
 
 function refreshNumbers() {
    		
@@ -49,12 +35,6 @@ function refreshNumbers() {
 
 
 		};
-
-
-function Incrementing (particle, increase) {
-		particle = particle + increase;
-};
-
 
 function getProbability(min, max) {
  		return Math.random() * (max - min) + min;
