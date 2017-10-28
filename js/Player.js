@@ -38,7 +38,6 @@ var Player = {
 	CH4: 0,
 	H20: 0,
 	NH3: 0,
-	CO2: 0, 
 
 }
 
