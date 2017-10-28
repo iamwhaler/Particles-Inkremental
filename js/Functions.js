@@ -19,7 +19,7 @@ function AddRandomBasicParticle() {
 
 
 function boosterStrings() {
-	let stringsModifier = getProbability(0.5,1.2);
+	let stringsModifier = getProbability(0.65,1.2);
 	Player.Strings=Player.Strings * stringsModifier;
 	AddRandomBasicParticle();
 	$('#boostStrings').html( "("+ stringsModifier.toFixed(3)+ "/sec)")
@@ -38,7 +38,7 @@ function refreshNumbers() {
    		document.getElementById("counterProtons").innerHTML = +Player.Protons.toFixed(2);
    		document.getElementById("counterNeutrons").innerHTML = +Player.Neutrons.toFixed(2);
    		document.getElementById("counterElectrons").innerHTML = +Player.Electrons.toFixed(2);
-   		document.getElementById("counterHydrogen").innerHTML = +Player.Hydrogen.toFixed(2);
+   		document.getElementById("counterHydrogen").innerHTML = +Player.Hydrogen.Counter.toFixed(2);
    		document.getElementById("counterH2").innerHTML = +Player.H2.toFixed(2);
 
 

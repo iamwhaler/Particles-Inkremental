@@ -2,7 +2,7 @@ var Player = {
 
 // Basic particles
 
-	Strings: 0,
+	Strings: 0,	
 	Ups: 0,
 	Downs: 0,
 
@@ -15,7 +15,12 @@ var Player = {
 
 // Atom nucleus
 
-	Hydrogen: 0,
+	Hydrogen: {
+		Counter: 0,
+		Cost: '',
+		About: '',	
+		},
+   
 	Helium: 0,
 	Carbon: 0,
 	Oxygen: 0,
@@ -36,3 +41,10 @@ var Player = {
 	CO2: 0, 
 
 }
+
+Player.Hydrogen.alerting = function () {
+		console.log(Player.Hydrogen.Counter)
+	}
+
+
+
