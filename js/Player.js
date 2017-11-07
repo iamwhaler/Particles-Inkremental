@@ -15,11 +15,7 @@ var Player = {
 
 // Atom nucleus
 
-	Hydrogen: {
-		Counter: 0,
-		Cost: '',
-		About: '',	
-		},
+	Hydrogen: 0,
    
 	Helium: 0,
 	Carbon: 0,
@@ -41,9 +37,18 @@ var Player = {
 
 }
 
-Player.Hydrogen.alerting = function () {
-		console.log(Player.Hydrogen.Counter)
-	}
+
+
+var getState = {
+	StringsCost: '1 click',
+	StringsInfo: 'String starts to fulcturate and create particles',
+
+	UpsCost: '1 String',
+	UpsInfo: '',
+
+	DownsCost: '1 String',
+	DownsInfo: ''
+}
 
 
 

@@ -19,9 +19,9 @@ loadCommentsFromServer: function() {
 
 	render: function () {
 		return (
-			<div className="Player">
+			<div className= "Player" > 
 			<Player data={this.state.data}>
-		</div>	
+		</div>
 	);
 	ReactDOM.render(
 	Player url="/api/Player" pollInterval={1000})

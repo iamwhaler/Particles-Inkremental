@@ -38,7 +38,7 @@ function refreshNumbers() {
    		document.getElementById("counterProtons").innerHTML = +Player.Protons.toFixed(2);
    		document.getElementById("counterNeutrons").innerHTML = +Player.Neutrons.toFixed(2);
    		document.getElementById("counterElectrons").innerHTML = +Player.Electrons.toFixed(2);
-   		document.getElementById("counterHydrogen").innerHTML = +Player.Hydrogen.Counter.toFixed(2);
+   		document.getElementById("counterHydrogen").innerHTML = +Player.Hydrogen.toFixed(2);
    		document.getElementById("counterH2").innerHTML = +Player.H2.toFixed(2);
 
 

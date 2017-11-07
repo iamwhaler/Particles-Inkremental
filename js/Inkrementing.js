@@ -1,8 +1,16 @@
 $('button').addClass('btn btn-default');
 
 $(document).ready(function () {
+	$('#StringsCost').html( getState.StringsCost )
+	$('#UpsCost').html ( getState.UpsCost )
+	$('#DownsCost').html( getState.DownsCost )
 
-window.setInterval(refreshNumbers, 200); 
+});
+
+
+$(document).ready(function () {
+
+// window.setInterval(refreshNumbers, 200); 
 
 	
 $("#stringBut").click(function (){
@@ -57,10 +65,10 @@ $('#hydrogenBut').click(function () {
 $('#h2But').click(function () {  // needed to add adding H2 randomly
 				
 		if (Player.Hydrogen.Counter >= 2) {
-				Player.Hydrogen.Counter = Player.Hydrogen.Counter - 2;
+				Player.Hydrogen = Player.Hydrogen - 2;
 				Player.H2 = Player.H2 + 1;
 				if (Player.H2 >= 2) {
-				 setInterval ("boosterStrings(1)", 1000);
+				 setInterval ("boosterStrings()", 1000);
 				;
 
 				}
