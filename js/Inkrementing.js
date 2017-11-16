@@ -10,7 +10,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
 
-// window.setInterval(refreshNumbers, 200); 
+window.setInterval(refreshNumbers, 200); 
 
 	
 $("#stringBut").click(function (){
@@ -64,7 +64,7 @@ $('#hydrogenBut').click(function () {
 
 $('#h2But').click(function () {  // needed to add adding H2 randomly
 				
-		if (Player.Hydrogen.Counter >= 2) {
+		if (Player.Hydrogen >= 2) {
 				Player.Hydrogen = Player.Hydrogen - 2;
 				Player.H2 = Player.H2 + 1;
 				if (Player.H2 >= 2) {

@@ -40,7 +40,7 @@ var Player = {
 
 
 var getState = {
-	StringsCost: '1 click',
+	StringsCost: 1 + ' ' + 'click',
 	StringsInfo: 'String starts to fulcturate and create particles',
 
 	UpsCost: '1 String',
