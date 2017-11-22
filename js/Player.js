@@ -1,6 +1,6 @@
 var Player = { 
 
-// Basic particles
+// Elemental particles
 
 	Strings: 0,	
 	Ups: 0,
@@ -22,19 +22,25 @@ var Player = {
 	Oxygen: 0,
 	Nitrogen: 0,
 
-// T1 Atoms
+// Molecules T1
 
 	H2: 0,
 	He2: 0,
 	N2: 0,
 	O2: 0,
 
-// T2 atoms
+// Stars T1
+	Hydrogen_Star: 0,
+
+
+// Molecules T2
 
 	CH4: 0,
 	H20: 0,
 	NH3: 0,
 
+
+	Chaos: 0
 }
 
 

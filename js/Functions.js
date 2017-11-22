@@ -16,15 +16,22 @@ function AddRandomBasicParticle() {
 
 	};		
 
+//Molecules T1
 
-
-function boosterStrings() {
+function H2_Reward() {
 	let stringsModifier = getProbability(0.65,1.2);
 	Player.Strings=Player.Strings * stringsModifier;
 	AddRandomBasicParticle();
 	$('#boostStrings').html( "("+ stringsModifier.toFixed(3)+ "/sec)")
 	// add the more you use the higher this shit
 };	
+
+function H2_Star_Reward() {
+	Chaos = getProbability(0.5, 0.8) 
+
+
+}
+
 
 
 function refreshNumbers() {
@@ -41,8 +48,10 @@ function refreshNumbers() {
    		document.getElementById("counterHydrogen").innerHTML = +Player.Hydrogen.toFixed(2);
    		document.getElementById("counterH2").innerHTML = +Player.H2.toFixed(2);
 
+   		document.getElementById("counterHydrogenStar").innerHTML = +Player.Hydrogen_Star.toFixed(2);
 
-		};
+
+};
 
 function getProbability(min, max) {
  		return Math.random() * (max - min) + min;

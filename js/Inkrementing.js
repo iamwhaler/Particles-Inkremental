@@ -1,5 +1,6 @@
 $('button').addClass('btn btn-default');
 
+
 $(document).ready(function () {
 	$('#StringsCost').html( getState.StringsCost )
 	$('#UpsCost').html ( getState.UpsCost )
@@ -10,14 +11,17 @@ $(document).ready(function () {
 
 $(document).ready(function () {
 
-window.setInterval(refreshNumbers, 200); 
+ window.setInterval(refreshNumbers, 200); 
+
+
+
 
 	
 $("#stringBut").click(function (){
 		lastString=Player.Strings;	
 		Player.Strings++;
 		if( Player.Strings - lastString > 0) {
-		AddRandomBasicParticle();   		// add 1 to one with a probability
+			AddRandomBasicParticle();   		// add 1 to one with a probability
 		};
 		
 });
@@ -68,13 +72,22 @@ $('#h2But').click(function () {  // needed to add adding H2 randomly
 				Player.Hydrogen = Player.Hydrogen - 2;
 				Player.H2 = Player.H2 + 1;
 				if (Player.H2 >= 2) {
-				 setInterval ("boosterStrings()", 1000);
+				 setInterval ("H2_Reward()", 1000);
 				;
 
 				}
 				};
 
 		});
+
+$('#h2_star_button').click(function() {
+
+	if(Player.H2>20) {
+		Player.Hydrogen_Star++
+	}
+
+	Hydrogen_Star_Reward();
+});
 
 });
 
