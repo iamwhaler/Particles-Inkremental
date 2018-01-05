@@ -18,10 +18,12 @@ function AddRandomBasicParticle() {
 
 //Molecules T1
 
-function H2_Reward(lowestRange) {
-	this.lowestRange = lowestRange;
-	let stringsModifier = getProbability(lowestRange,1.2);
-	Player.Strings=Player.Strings * stringsModifier;
+function H2_Reward() {
+	
+
+	let stringsModifier = getProbability( 0.5 ,1.2);
+	
+	Player.Strings = Player.Strings + (Player.Strings * stringsModifier);
 	AddRandomBasicParticle();
 	$('#boostStrings').html( "("+ stringsModifier.toFixed(3)+ "/sec)")
 	// add the more you use the higher this shit},)
@@ -30,7 +32,7 @@ function H2_Reward(lowestRange) {
 
 
 function H2_Star_Reward() {
-	Chaos = getProbability(0.5, 0.8) 
+	Chaos = getProbability(0.5, 0.8)
 
 
 }

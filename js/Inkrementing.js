@@ -9,8 +9,6 @@ $(document).ready(function () {
 	$('#ProtonsCost').html( getState.ProtonsCost)
 	$('#NeutronsCost').html( getState.NeutronsCost)
 
-
-
 });
 
 
@@ -56,9 +54,11 @@ $('#neutronsBut').click(function () {
 
 $('#electronsBut').click(function () {
 
+		if (Player.Strings > 0) {
 		Player.Strings--;
 
-		Player.Electrons = Player.Electrons + 0.09 });
+		Player.Electrons = Player.Electrons + 0.09 } 
+	});
 
 
 
@@ -78,15 +78,13 @@ $('#h2But').click(function () {  // needed to add adding H2 randomly
 		if (Player.Hydrogen >= 2) {
 				Player.Hydrogen = Player.Hydrogen - 2;
 				Player.H2 = Player.H2 + 1;
+				
 				if (Player.H2  >= 2) {
-					for (let presentRevard = 0.65; presentRevard > Player.Strings; presentRevard + 0.13) {
-					H2_Reward(presentRevard);
+					var rewardTick = setInterval( H2_Reward, 1000) // bad code
 
 				};
 				}
-				};
-
-		});
+				});
 
 $('#h2_star_button').click(function() {
 
