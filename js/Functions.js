@@ -21,9 +21,9 @@ function AddRandomBasicParticle() {
 function H2_Reward() {
 	
 
-	let stringsModifier = getProbability( 0.5 ,1.2);
+	let stringsModifier = getProbability( 0.1 , 0.3);
 	
-	Player.Strings = Player.Strings + (Player.Strings * stringsModifier);
+	Player.Strings = Player.Strings - (Player.Strings * stringsModifier);
 	AddRandomBasicParticle();
 	$('#boostStrings').html( "("+ stringsModifier.toFixed(3)+ "/sec)")
 	// add the more you use the higher this shit},)
