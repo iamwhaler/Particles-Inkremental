@@ -20,13 +20,14 @@ function AddRandomBasicParticle() {
 
 function H2_Reward() {
 	
-
-	let stringsModifier = getProbability( 0.1 , 0.3);
+	let lowerRange = 0.1;
+	let stringsModifier = getProbability( lowerRange , 1);
 	
 	Player.Strings = Player.Strings - (Player.Strings * stringsModifier);
 	AddRandomBasicParticle();
-	$('#boostStrings').html( "("+ stringsModifier.toFixed(3)+ "/sec)")
+	$('#boostStrings').html( "("+ stringsModifier.toFixed(3)+ "/sec)");
 	// add the more you use the higher this shit},)
+	lowerRange++;
 };
 
 

@@ -17,3 +17,37 @@ div.col-sm-2{
     height: 30 px;
 
 }
+
+.row {
+	margin-left: 10px;
+}
+
+
+a:hover { 
+     text-decoration: none;
+   }
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #eeeeee;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: grey;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #e0e0e0;
+}
