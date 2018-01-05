@@ -1,10 +1,15 @@
-$('button').addClass('btn btn-default');
+$('button').addClass('btn btn-block btn-default');
 
 
 $(document).ready(function () {
 	$('#StringsCost').html( getState.StringsCost )
 	$('#UpsCost').html ( getState.UpsCost )
 	$('#DownsCost').html( getState.DownsCost )
+	$('#ElectronsCost').html( getState.ElectronsCost)
+	$('#ProtonsCost').html( getState.ProtonsCost)
+	$('#NeutronsCost').html( getState.NeutronsCost)
+
+
 
 });
 
@@ -50,7 +55,9 @@ $('#neutronsBut').click(function () {
 															
 
 $('#electronsBut').click(function () {
-	
+
+		Player.Strings--;
+
 		Player.Electrons = Player.Electrons + 0.09 });
 
 
@@ -71,10 +78,11 @@ $('#h2But').click(function () {  // needed to add adding H2 randomly
 		if (Player.Hydrogen >= 2) {
 				Player.Hydrogen = Player.Hydrogen - 2;
 				Player.H2 = Player.H2 + 1;
-				if (Player.H2 >= 2) {
-				 setInterval ("H2_Reward()", 1000);
-				;
+				if (Player.H2  >= 2) {
+					for (let presentRevard = 0.65; presentRevard > Player.Strings; presentRevard + 0.13) {
+					H2_Reward(presentRevard);
 
+				};
 				}
 				};
 

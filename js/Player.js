@@ -46,14 +46,20 @@ var Player = {
 
 
 var getState = {
-	StringsCost: 1 + ' ' + 'click',
+	StringsCost: '[' + 1 + ' ' + 'click]',
 	StringsInfo: 'String starts to fulcturate and create particles',
 
-	UpsCost: '1 String',
+	UpsCost: '[1 String]',
 	UpsInfo: '',
 
-	DownsCost: '1 String',
-	DownsInfo: ''
+	DownsCost: '[1 String]',
+	DownsInfo: '',
+
+	ElectronsCost: '[' + 1 + ' ' + 'String]',
+
+	ProtonsCost: '[2U 1D]',
+
+	NeutronsCost: '[1U 2D]'
 }
 
 
