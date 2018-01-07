@@ -20,23 +20,20 @@ function AddRandomBasicParticle() {
 
 function H2_Reward() {
 	
+	
 	let lowerRange = 0.1;
 	let stringsModifier = getProbability( lowerRange , 1);
 	
 	Player.Strings = Player.Strings - (Player.Strings * stringsModifier);
+
+
+
 	AddRandomBasicParticle();
 	$('#boostStrings').html( "("+ stringsModifier.toFixed(3)+ "/sec)");
 	// add the more you use the higher this shit},)
 	lowerRange++;
 };
 
-
-
-function H2_Star_Reward() {
-	Chaos = getProbability(0.5, 0.8)
-
-
-}
 
 
 
@@ -57,7 +54,6 @@ function refreshNumbers() {
    		document.getElementById("counterH2").innerHTML = +Player.H2.toFixed(2);
 
    		document.getElementById("counterHydrogenStar").innerHTML = +Player.Hydrogen_Star.toFixed(2);
-
 
 };
 

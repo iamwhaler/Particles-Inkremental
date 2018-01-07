@@ -108,9 +108,6 @@ $('#h2But').click(function () {  // needed to add adding H2 randomly
 
 
 $('#HydrogenStarBut').click(function() {
-
-	
-
 		
 		if(Player.H2>50) {
 			Player.H2 -= 50;
@@ -119,14 +116,15 @@ $('#HydrogenStarBut').click(function() {
 
 			let boostRepeat = setInterval(function() {
 
-			let boostValue = 2
+			const boostValue = 2
 			Player.Strings += boostValue * Player.Hydrogen_Star;
 			}, 1000)
 		}
+		   	$('#boostStrings').html( "("+ boostValue + "/sec)");
+
 	}
 		
 
-		$('#boostStrings').html( "("+ boostValue.toFixed(3)+ "/sec)");
 
 	
 	});
