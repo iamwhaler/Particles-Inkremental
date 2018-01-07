@@ -59,7 +59,15 @@ var getState = {
 
 	ProtonsCost: '[2U 1D]',
 
-	NeutronsCost: '[1U 2D]'
+	NeutronsCost: '[1U 2D]',
+
+	HydrogenCost: '[1E 1P 1N]',
+
+	HeliumCost: '[2E 2P 2N]',
+
+	CarbonCost: '[6E 6P 6N]',
+
+	OxygenCost: '[8E 8P 8(9)N]'
 }
 
 

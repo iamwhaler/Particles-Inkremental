@@ -5,9 +5,15 @@ $(document).ready(function () {
 	$('#StringsCost').html( getState.StringsCost )
 	$('#UpsCost').html ( getState.UpsCost )
 	$('#DownsCost').html( getState.DownsCost )
+	
 	$('#ElectronsCost').html( getState.ElectronsCost)
 	$('#ProtonsCost').html( getState.ProtonsCost)
 	$('#NeutronsCost').html( getState.NeutronsCost)
+
+	$('#HydrogenCost').html( getState.HydrogenCost)
+	$('#HeliumCost').html( getState.HeliumCost)
+
+
 
 });
 
@@ -73,6 +79,20 @@ $('#hydrogenBut').click(function () {
 
 		});
 
+$('#heliumBut').click(function () {  // needed to add adding H2 randomly
+	if (Player.Electrons >= 2 && Player.Protons >= 2 && Player.Neutrons >= 2 ) {
+				Player.Electrons -= 2;
+				Player.Neutrons -= 2;
+				Player.Protons -=2 ;
+				Player.Helium++; 
+				};
+			
+		
+
+
+});
+
+
 $('#h2But').click(function () {  // needed to add adding H2 randomly
 				
 		if (Player.Hydrogen >= 2) {
@@ -80,20 +100,36 @@ $('#h2But').click(function () {  // needed to add adding H2 randomly
 				Player.H2 = Player.H2 + 1;
 				
 				if (Player.H2  >= 2) {
-					var rewardTick = setInterval( H2_Reward, 1000) // bad code
+					H2_Reward() // bad code
 
 				};
 				}
 				});
 
-$('#h2_star_button').click(function() {
 
-	if(Player.H2>20) {
-		Player.Hydrogen_Star++
+$('#HydrogenStarBut').click(function() {
+
+	
+
+		
+		if(Player.H2>50) {
+			Player.H2 -= 50;
+			Player.Hydrogen_Star++;
+		if (Player.Hydrogen_Star>=1) {
+
+			let boostRepeat = setInterval(function() {
+
+			let boostValue = 2
+			Player.Strings += boostValue * Player.Hydrogen_Star;
+			}, 1000)
+		}
 	}
+		
 
-	Hydrogen_Star_Reward();
-});
+		$('#boostStrings').html( "("+ boostValue.toFixed(3)+ "/sec)");
+
+	
+	});
 
 });
 
