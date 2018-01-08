@@ -1,4 +1,7 @@
+"use strict";
+
 $('button').addClass('btn btn-block btn-default');
+
 
 
 $(document).ready(function () {
@@ -20,14 +23,9 @@ $(document).ready(function () {
 
 $(document).ready(function () {
 
- window.setInterval(refreshNumbers, 200); 
-
-
-
-
 	
 $("#stringBut").click(function (){
-		lastString=Player.Strings;	
+		let lastString=Player.Strings;	
 		Player.Strings++;
 		if( Player.Strings - lastString > 0) {
 			AddRandomBasicParticle();   		// add 1 to one with a probability
@@ -114,20 +112,15 @@ $('#HydrogenStarBut').click(function() {
 			Player.Hydrogen_Star++;
 		if (Player.Hydrogen_Star>=1) {
 
-			let boostRepeat = setInterval(function() {
 
-			const boostValue = 2
-			Player.Strings += boostValue * Player.Hydrogen_Star;
+			const boostRepeat = setInterval(function() {
+			const boostValue = 2;
+
+			Player.Strings += boostValue * (1/Player.Hydrogen_Star);
 			}, 1000)
 		}
-		   	$('#boostStrings').html( "("+ boostValue + "/sec)");
-
 	}
-		
-
-
-	
-	});
+});
 
 });
 

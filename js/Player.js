@@ -45,6 +45,7 @@ var Player = {
 
 
 
+
 var getState = {
 	StringsCost: '[' + 1 + ' ' + 'click]',
 	StringsInfo: 'String starts to fulcturate and create particles',
@@ -69,6 +70,5 @@ var getState = {
 
 	OxygenCost: '[8E 8P 8(9)N]'
 }
-
 
 
