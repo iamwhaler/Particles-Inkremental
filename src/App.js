@@ -1,5 +1,6 @@
 import React from 'react';
+import Player from './Player';
 
 export default () => (
-  <h1>React Webpack 2 starter</h1>
+  <Player />
 );

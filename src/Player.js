@@ -6,7 +6,11 @@ class Player extends React.Component {
   constructor(props) {
     this.state = {
       Player,
+      boostStrings: 0,
     };
+    this.stringHandler = this.stringHandler.bind(this);
+    this.protonsHandler = this.protonsHandler.bind(this);
+    this.neutronsHandler = this.neutronsprotonsHandler.bind(this);
   }
 
   AddRandomBasicParticle() {
@@ -58,7 +62,7 @@ class Player extends React.Component {
     Player.Strings = Player.Strings - (Player.Strings * stringsModifier);
 
     this.AddRandomBasicParticle();
-    $('#boostStrings').html("(" + stringsModifier.toFixed(3) + "/sec)");
+    this.setState({ ...state, boostStrings: stringsModifier.toFixed(3) });
 
     lowerRange++;
   };
@@ -66,6 +70,89 @@ class Player extends React.Component {
   getProbability(min, max) {
     return Math.random() * (max - min) + min;
   };
+  stringHandler() {
+    const { Strings: currStrings } = this.state.Player;
+    const Strings = Strings + 1;
+    if (Strings - currStrings > 0) {
+      AddRandomBasicParticle(); // add 1 to one with a probability
+    };
+    this.setState({
+      ...this.state,
+      Player: {
+        ...this.state.Player,
+        Strings,
+      }
+    });
+  }
+  protonHandler() {
+    const { Ups: currUps, Downs: currDowns, Protons: currProtons } = this.state.Player;
+    if (Ups >= 2 && Downs >= 1) {
+      const Protons = currProtons + 1;
+      const Ups = currUps - 2;
+      const Downs = currDowns - 1;
+      this.setState({
+        ...this.state,
+        Player: {
+          ...this.state.Player,
+          Protons,
+          Ups,
+          Downs,
+        }
+      })
+    };
+  }
+  neutronHandler() {
+    if (Player.Ups >= 1 && Player.Downs >= 2) {
+      Player.Neutrons++;
+      Player.Ups--;
+      Player.Downs = Player.Downs - 2;
+    };
+  }
+  electronHandler() {
+    if (Player.Strings > 0) {
+      Player.Strings--;
+      Player.Electrons = Player.Electrons + 0.09
+    }
+  }
+  hydrogenHandler() {
+    if (Player.Electrons >= 1 && Player.Neutrons >= 1 && Player.Protons >= 1) {
+      Player.Electrons--;
+      Player.Neutrons--;
+      Player.Protons--;
+      Player.Hydrogen++;
+    };
+  }
+  heliumHandler() {
+    if (Player.Electrons >= 2 && Player.Protons >= 2 && Player.Neutrons >= 2) {
+      Player.Electrons -= 2;
+      Player.Neutrons -= 2;
+      Player.Protons -= 2;
+      Player.Helium++;
+    };
+  }
+  h2Handler() {
+    if (Player.Hydrogen >= 2) {
+      Player.Hydrogen = Player.Hydrogen - 2;
+      Player.H2 = Player.H2 + 1;
+
+      if (Player.H2 >= 2) {
+        H2_Reward() // bad code
+      };
+    }
+  }
+  hydrogenStarHandler() {
+    if (Player.H2 > 50) {
+      Player.H2 -= 50;
+      Player.Hydrogen_Star++;
+      if (Player.Hydrogen_Star >= 1) {
+        const boostRepeat = setInterval(function () {
+          const boostValue = 2;
+
+          Player.Strings += boostValue * (1 / Player.Hydrogen_Star);
+        }, 1000)
+      }
+    }
+  }
 
   render() {
     return (
@@ -74,12 +161,12 @@ class Player extends React.Component {
         <div class="col-sm-2">
           <div class="divStrings">
 
-            <button id="stringBut">
+            <button className="btn btn-block btn-default" onClick={this.stringHandler}>
             
               Strings: <a id="counterStrings">{this.state.Player.Strings}</a>
               <br />
               <div id="StringsCost"></div> 
-              <div id="boostStrings"></div>
+              <div id="boostStrings">({this.state.boostStrings})/sec</div>
             
             </button>
 
@@ -89,7 +176,7 @@ class Player extends React.Component {
         <div class="col-sm-2">
           <div class="divAtoms">
 
-              <button id="hydrogenBut">
+              <button className="btn btn-block btn-default" onClick={this.hydrogenHandler}>
                 Hydrogen: <a id="counterHydrogen">{this.state.Player.Hydrogen}</a>
                 <br />
                 <div id="HydrogenCost">{GameInfo.HydrogenCost}</div>
@@ -101,7 +188,7 @@ class Player extends React.Component {
         <div class="col-sm-2">
           <div class="divActions">
 
-            <button id="h2But">
+            <button className="btn btn-block btn-default">
               Synth H2 <a id="counterH2">{this.state.Player.H2}</a>
             </button>
 
@@ -111,7 +198,7 @@ class Player extends React.Component {
         <div class="col-sm-2">
           <div class="divStars">
 
-              <button id="HydrogenStarBut" class="btn btn-block btn-primary"> 
+              <button class="btn btn-block btn-primary" onClick={this.hydrogenStarHandler}> 
                 Hydrogen Star: <a id="counterHydrogenStar">{this.state.Player.Hydrogen_Star}</a>
               </button>
 
@@ -125,7 +212,7 @@ class Player extends React.Component {
         <div class="col-sm-2">
           <div class="divUps">
 
-            <button id="upsBut">
+            <button className="btn btn-block btn-default">
               Up Quarks: <a id="counterUps">{this.state.Player.Ups}</a>
               <br />
               <div id="UpsCost">{GameInfo.UpsCost}</div>
@@ -138,7 +225,7 @@ class Player extends React.Component {
         <div class="col-sm-2">
           <div class="divAtoms">
 
-              <button id="heliumBut"> 
+              <button className="btn btn-block btn-default" onClick={this.heliumHandler}> 
                 Helium: <a id="counterHelium">{this.state.Player.Helium}</a>
                 <br />
                 <div id="HeliumCost">{GameInfo.HeliumCost}</div>
@@ -154,7 +241,7 @@ class Player extends React.Component {
         <div class="col-sm-2">
           <div class="divDowns">
 
-            <button id="downsBut"> 
+            <button className="btn btn-block btn-default"> 
               Down Quarks: <a id="counterDowns">{this.state.Player.Downs}</a>
               <br />
               <div id ="DownsCost">{GameInfo.DownsCost}</div>
@@ -171,7 +258,7 @@ class Player extends React.Component {
         <div class="col-sm-2">
           <div class="divElectrons">
 
-            <button id="electronsBut">
+            <button className="btn btn-block btn-default" onClick={this.electronHandler}>
               Electrons: <a id="counterElectrons">{this.state.Player.Electrons}</a>
               <div id="ElectronsCost">{GameInfo.ElectronsCost}</div>
             </button>
@@ -186,7 +273,7 @@ class Player extends React.Component {
         <div class="col-sm-2">
           <div class="divProtons">
 
-            <button id="protonsBut"> 
+            <button className="btn btn-block btn-default" onClick={this.protonHandler}> 
               Protons: <a id="counterProtons">{this.state.Player.Protons}</a>
               <br />
               <div id="ProtonsCost">{GameInfo.ProtonsCost}</div>
@@ -202,7 +289,7 @@ class Player extends React.Component {
         <div class="col-sm-2">
           <div class="divNeutrons">
 
-            <button id="neutronsBut" class="btn btn-block btn-default"> 
+            <button class="btn btn-block btn-default" onClick={this.neutronHandler}> 
               Neutrons: <a id="counterNeutrons">{this.state.Player.Neutrons}</a>
               <br />
               <div id="NeutronsCost">{GameInfo.NeutronsCost}</div>
