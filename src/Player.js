@@ -1,16 +1,17 @@
 import React from 'react';
-import Player from './player.json';
+import PlayerStats from './player.json';
 import GameInfo from './gameInfo.json';
 
-class Player extends React.Component {
+export default class Player extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
-      Player,
+      Player: PlayerStats,
       boostStrings: 0,
     };
     this.stringHandler = this.stringHandler.bind(this);
-    this.protonsHandler = this.protonsHandler.bind(this);
-    this.neutronsHandler = this.neutronsprotonsHandler.bind(this);
+    this.protonHandler = this.protonHandler.bind(this);
+    this.neutronHandler = this.neutronHandler.bind(this);
   }
 
   AddRandomBasicParticle() {
@@ -156,148 +157,150 @@ class Player extends React.Component {
 
   render() {
     return (
-      <div class="row">
+      <div>
+        <div className="row">
 
-        <div class="col-sm-2">
-          <div class="divStrings">
+          <div className="col-sm-2">
+            <div className="divStrings">
 
-            <button className="btn btn-block btn-default" onClick={this.stringHandler}>
-            
-              Strings: <a id="counterStrings">{this.state.Player.Strings}</a>
-              <br />
-              <div id="StringsCost"></div> 
-              <div id="boostStrings">({this.state.boostStrings})/sec</div>
-            
-            </button>
-
-          </div>
-        </div>
-
-        <div class="col-sm-2">
-          <div class="divAtoms">
-
-              <button className="btn btn-block btn-default" onClick={this.hydrogenHandler}>
-                Hydrogen: <a id="counterHydrogen">{this.state.Player.Hydrogen}</a>
+              <button className="btn btn-block btn-default" onClick={this.stringHandler}>
+              
+                Strings: <a id="counterStrings">{this.state.Player.Strings}</a>
                 <br />
-                <div id="HydrogenCost">{GameInfo.HydrogenCost}</div>
+                <div id="StringsCost"></div> 
+                <div id="boostStrings">({this.state.boostStrings})/sec</div>
+              
               </button>
 
+            </div>
           </div>
-        </div>
 
-        <div class="col-sm-2">
-          <div class="divActions">
+          <div className="col-sm-2">
+            <div className="divAtoms">
 
-            <button className="btn btn-block btn-default">
-              Synth H2 <a id="counterH2">{this.state.Player.H2}</a>
-            </button>
+                <button className="btn btn-block btn-default" onClick={this.hydrogenHandler}>
+                  Hydrogen: <a id="counterHydrogen">{this.state.Player.Hydrogen}</a>
+                  <br />
+                  <div id="HydrogenCost">{GameInfo.HydrogenCost}</div>
+                </button>
 
+            </div>
           </div>
-        </div>
 
-        <div class="col-sm-2">
-          <div class="divStars">
+          <div className="col-sm-2">
+            <div className="divActions">
 
-              <button class="btn btn-block btn-primary" onClick={this.hydrogenStarHandler}> 
-                Hydrogen Star: <a id="counterHydrogenStar">{this.state.Player.Hydrogen_Star}</a>
+              <button className="btn btn-block btn-default">
+                Synth H2 <a id="counterH2">{this.state.Player.H2}</a>
               </button>
 
+            </div>
           </div>
+
+          <div className="col-sm-2">
+            <div className="divStars">
+
+                <button className="btn btn-block btn-primary" onClick={this.hydrogenStarHandler}> 
+                  Hydrogen Star: <a id="counterHydrogenStar">{this.state.Player.Hydrogen_Star}</a>
+                </button>
+
+            </div>
+          </div>
+
         </div>
 
-      </div>
+        <div className="row">
 
-      <div class="row">
+          <div className="col-sm-2">
+            <div className="divUps">
 
-        <div class="col-sm-2">
-          <div class="divUps">
-
-            <button className="btn btn-block btn-default">
-              Up Quarks: <a id="counterUps">{this.state.Player.Ups}</a>
-              <br />
-              <div id="UpsCost">{GameInfo.UpsCost}</div>
-              <div id="boostUps"></div>
-            </button>
-
-          </div>
-        </div>
-
-        <div class="col-sm-2">
-          <div class="divAtoms">
-
-              <button className="btn btn-block btn-default" onClick={this.heliumHandler}> 
-                Helium: <a id="counterHelium">{this.state.Player.Helium}</a>
+              <button className="btn btn-block btn-default">
+                Up Quarks: <a id="counterUps">{this.state.Player.Ups}</a>
                 <br />
-                <div id="HeliumCost">{GameInfo.HeliumCost}</div>
+                <div id="UpsCost">{GameInfo.UpsCost}</div>
+                <div id="boostUps"></div>
               </button>
 
+            </div>
           </div>
+
+          <div className="col-sm-2">
+            <div className="divAtoms">
+
+                <button className="btn btn-block btn-default" onClick={this.heliumHandler}> 
+                  Helium: <a id="counterHelium">{this.state.Player.Helium}</a>
+                  <br />
+                  <div id="HeliumCost">{GameInfo.HeliumCost}</div>
+                </button>
+
+            </div>
+          </div>
+
         </div>
 
-      </div>
+        <div className="row">
 
-      <div class="row">
+          <div className="col-sm-2">
+            <div className="divDowns">
 
-        <div class="col-sm-2">
-          <div class="divDowns">
+              <button className="btn btn-block btn-default"> 
+                Down Quarks: <a id="counterDowns">{this.state.Player.Downs}</a>
+                <br />
+                <div id ="DownsCost">{GameInfo.DownsCost}</div>
+                <div id="boostDowns"></div> 
+              </button>
 
-            <button className="btn btn-block btn-default"> 
-              Down Quarks: <a id="counterDowns">{this.state.Player.Downs}</a>
-              <br />
-              <div id ="DownsCost">{GameInfo.DownsCost}</div>
-              <div id="boostDowns"></div> 
-            </button>
-
+            </div>
           </div>
+
         </div>
 
-      </div>
+        <div className="row">
 
-      <div class="row">
+          <div className="col-sm-2">
+            <div className="divElectrons">
 
-        <div class="col-sm-2">
-          <div class="divElectrons">
+              <button className="btn btn-block btn-default" onClick={this.electronHandler}>
+                Electrons: <a id="counterElectrons">{this.state.Player.Electrons}</a>
+                <div id="ElectronsCost">{GameInfo.ElectronsCost}</div>
+              </button>
 
-            <button className="btn btn-block btn-default" onClick={this.electronHandler}>
-              Electrons: <a id="counterElectrons">{this.state.Player.Electrons}</a>
-              <div id="ElectronsCost">{GameInfo.ElectronsCost}</div>
-            </button>
-
+            </div>
           </div>
+
         </div>
 
-      </div>
+        <div className="row">
 
-      <div class="row">
+          <div className="col-sm-2">
+            <div className="divProtons">
 
-        <div class="col-sm-2">
-          <div class="divProtons">
+              <button className="btn btn-block btn-default" onClick={this.protonHandler}> 
+                Protons: <a id="counterProtons">{this.state.Player.Protons}</a>
+                <br />
+                <div id="ProtonsCost">{GameInfo.ProtonsCost}</div>
+              </button>
 
-            <button className="btn btn-block btn-default" onClick={this.protonHandler}> 
-              Protons: <a id="counterProtons">{this.state.Player.Protons}</a>
-              <br />
-              <div id="ProtonsCost">{GameInfo.ProtonsCost}</div>
-            </button>
-
+            </div>
           </div>
+
         </div>
 
-      </div>
+        <div className="row">
 
-      <div class="row">
+          <div className="col-sm-2">
+            <div className="divNeutrons">
 
-        <div class="col-sm-2">
-          <div class="divNeutrons">
+              <button className="btn btn-block btn-default" onClick={this.neutronHandler}> 
+                Neutrons: <a id="counterNeutrons">{this.state.Player.Neutrons}</a>
+                <br />
+                <div id="NeutronsCost">{GameInfo.NeutronsCost}</div>
+              </button>
 
-            <button class="btn btn-block btn-default" onClick={this.neutronHandler}> 
-              Neutrons: <a id="counterNeutrons">{this.state.Player.Neutrons}</a>
-              <br />
-              <div id="NeutronsCost">{GameInfo.NeutronsCost}</div>
-            </button>
-
+            </div>
           </div>
-        </div>
 
+        </div>
       </div>
     );
   }

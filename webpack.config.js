@@ -2,14 +2,16 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const DashboardPlugin = require('webpack-dashboard/plugin');
 const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const srcDir = path.resolve(__dirname, 'src');
 
 module.exports = {
+  devtool: 'source-map',
   entry: [
     'react-hot-loader/patch',
 
-    'webpack-dev-server/client?http://localhost:3000',
+    'webpack-dev-server/client?http://localhost:8080',
     // bundle the client for webpack-dev-server
     // and connect to the provided endpoint
 
@@ -47,6 +49,7 @@ module.exports = {
     new HtmlWebpackPlugin({ template: 'src/index.html' }),
     new DashboardPlugin(),
     new webpack.HotModuleReplacementPlugin({}),
+    new CopyWebpackPlugin([ { from: 'src/assets', to: 'assets' } ]),
   ],
   devServer: {
     historyApiFallback: true,
