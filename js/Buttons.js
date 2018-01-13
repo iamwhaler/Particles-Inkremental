@@ -26,10 +26,8 @@ $(document).ready(function () {
 	
 $("#stringBut").click(function (){
 		let lastString=Player.Strings;	
-		Player.Strings++;
-		if( Player.Strings - lastString > 0) {
 			AddRandomBasicParticle();   		// add 1 to one with a probability
-		};
+
 		
 });
 
