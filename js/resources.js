@@ -1,10 +1,21 @@
-
-Hydrogen = {
-	Counter: 0;
+const Atom = (Protons, Neutrons, Electrons) => ({
 	Cost: {
-		Protons: 1,
-		Neutrons: 1, 
-		Electrons: 1
+		Protons,
+		Neutrons,
+		Electrons,
+	},
+})
+
+const substractCost = (Player, Atom) => {
+
+	const Protons = Player.Protons - Atom.Cost.Protons
+	const Neutrons =
+	const Electrons = 
+
+	return {
+		...Player,
+		Protons: Protons,
+		Neutrons: Neutrons,
+		Electrons: Electrons,
 	}
 }
-
