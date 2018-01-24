@@ -4,6 +4,7 @@ const Atom = (Protons, Neutrons, Electrons) => ({
 		Neutrons,
 		Electrons,
 	},
+
 })
 
 const substractCost = (Player, Atom) => {
@@ -19,3 +20,4 @@ const substractCost = (Player, Atom) => {
 		Electrons: Electrons,
 	}
 }
+
