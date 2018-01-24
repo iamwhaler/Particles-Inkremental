@@ -4,8 +4,7 @@ function saveGame() {
 }
 
 function loadGame() {
-	var currentState = localStorage.getItem("game")
-	var returnObj = JSON.parse(currentState)
-
-	Player = returnObj;
+	var currentProgress = localStorage.getItem("game")
+	Player = JSON.parse(currentProgress)
+	console.log(Player)
 }
