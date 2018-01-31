@@ -1,6 +1,6 @@
 "use strict";
 
-$('button').addClass('btn btn-block btn-default');
+$('button').addClass('btn btn-outline-secondary');
 
 
 
@@ -27,8 +27,6 @@ $(document).ready(function () {
 $("#stringBut").click(function (){
 		let lastString=Player.Strings;	
 			AddRandomBasicParticle();   		// add 1 to one with a probability
-
-		
 });
 
 

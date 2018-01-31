@@ -1,10 +1,28 @@
-
-div.col-sm-2{
-	margin-bottom: 10px;
-	margin-top: 10px;
-	border: 1px;
+.divColumn {
+        margin-top: 5px;
+        margin-bottom: 30px;
+        margin-left: 30px;
+        margin-right: 0px;
+        display: inline-block;
 
 }
+
+.button {
+            padding: 5px 5px 5px 5px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            margin-right: 80px;
+            margin-left: 0px;
+            width: 100px;
+            text-align: center;
+}
+
+button {
+    width: 180px;
+    height: 65px;
+}
+
+
 
 div.col-sm-2{
 	text-shadow: 20px;
@@ -18,9 +36,7 @@ div.col-sm-2{
 
 }
 
-.row {
-	margin-left: 10px;
-}
+
 
 
 a:hover { 
@@ -30,21 +46,24 @@ a:hover {
 
 ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    margin-left: 30px;
     overflow: hidden;
     background-color: #eeeeee;
 }
 
 li {
     float: left;
+    margin-right: 33.5px;
+    width: 180px;
+
+
 }
 
 li a {
     display: block;
     color: grey;
     text-align: center;
-    padding: 14px 16px;
+    padding: 9px 0px;
     text-decoration: none;
 }
 
