@@ -52,7 +52,7 @@ var getState = {
 	StringsInfo: 'String starts to fulcturate and create particles',
 
 	UpsCost: '[1 String]',
-	UpsInfo: '',
+	UpsInfo: 'The up quark is the lightest of all quarks. Along with the down quark, it forms the neutrons and protons of atomic nuclei.',
 
 	DownsCost: '[1 String]',
 	DownsInfo: '',

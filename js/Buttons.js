@@ -1,12 +1,18 @@
 "use strict";
 
-$('button').addClass('btn btn-outline-secondary');
+$('button').addClass('btn btn-light');
 
 
 
 $(document).ready(function () {
 	$('#StringsCost').html( getState.StringsCost )
+	$('#stringsInfo').html (getState.StringsInfo)
+
+
 	$('#UpsCost').html ( getState.UpsCost )
+	$('#UpsInfo').html (getState.UpsInfo)
+
+
 	$('#DownsCost').html( getState.DownsCost )
 	
 	$('#ElectronsCost').html( getState.ElectronsCost)
