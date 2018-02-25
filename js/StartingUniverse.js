@@ -1,4 +1,9 @@
-"use strict"
+
+$(document).ready(function(){
+	$("#selectUniverse").modal('toggle');
+
+  	$('[data-toggle="tooltip"]').tooltip();
+});
 
 const Universe = class Universe {
 	constructor (strings, speed, handcap, atoms) {
@@ -22,8 +27,9 @@ const Universe = class Universe {
 
 
 
-const Fast  = new Universe(2.5, 10, 2.5, 5)
-const Slow = new Universe(5, 2.5, 2.5, 10)
-const Automated = new Universe(15, 2.5, 2.5, 0)
-const Easier = new Universe(5, 5, 10, 0)
+const Flesh  = new Universe(2.5, 10, 2.5, 5)
+const Variable = new Universe(5, 2.5, 2.5, 10)
+const Singularity = new Universe(15, 2.5, 2.5, 0)
+const Launched = new Universe(5, 5, 10, 0)
+
 

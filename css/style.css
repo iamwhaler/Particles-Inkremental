@@ -69,9 +69,10 @@
 
 button {
     width: 180px;
-    height: 65px;
     position: relative;
 }
+
+
 
 .info{
     position: absolute;
@@ -98,10 +99,12 @@ button {
     display: flex;
 
     font-size: small;
+    display: none;
     }
 
 .info:hover ~ .btn-tooltip{
-    opacity: 1
+    opacity: 1;
+    display: block
 }
 
 
@@ -113,6 +116,7 @@ div.col-sm-2{
 .basicIcon {	
     width: 30px;
     height: 30 px;
+
 
 }
 

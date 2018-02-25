@@ -34,45 +34,30 @@
 			</div>
 			</div>
 			</div>
-
-
-
-		
-			</header>
+		</header>
 
 
  	 <ul class = "navbar">
-      <li>
-      	<a>
+      <li><a>
 			Basic particles
 			<img src="img/basic_particles.png" class="basicIcon" >
+		</a></li>
 
-		
-		</a>
-
-		</li>
-
-      <li>
-      	<a>
+      <li><a>
 			Atom nucleus
 			<img src="img/atoms.png" class="basicIcon">
-		</a>
-	</li>
+		</a></li>
 
       <li><a>
 			Simple molecules
 			<img src="img/simple_molecules.png" class="basicIcon" >
-		</a>
-		</li>
+		</a></li>
      
       <li><a>
 			Stars
 			<img src="img/star.png" class="basicIcon">
-		</a>
-		</li>
+		</a></li>
 
-
-     
    	 </ul>
 </div>
 
@@ -109,8 +94,6 @@
 
 
 	<div class = "button">
-
-		
 		<button id = "downsBut"> 
 		Down Quarks: <a id = 'counterDowns'> 0 </a>
 		<br>
@@ -200,7 +183,7 @@
 
 <div class = "Column">
 		<div class = "button">
-			<button id = 'HydrogenStarBut' type = "button" class = "btn btn-outline-primary"> 
+			<button id = 'HydrogenStarBut' type = "button" class = "btn btn-outline-primary" disabled> 
 				 Hydrogen Star: <a id = 'counterHydrogenStar'> 0 </a>
 			</button>
 		</div>
@@ -216,8 +199,36 @@
 </div>
 
 
+<!-- Universe selection -->
 
+<div class="modal fade" id="selectUniverse" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Welcome to the Big Bang moment</h5>
+ 
+      </div>
+      <div class="modal-body">
+        You are on the start of the new Universe. You change the way it expands. You manage what does it consist of.
+        <br />
+        <br />
 
+        You are given a chance to choose the starting position. Take a responsibility carefully.
+      </div>
+
+      <div class="modal-footer">
+        
+ 
+        <button type="button" class="btn btn-secondary" id = "Flesh" data-dismiss="modal" data-toggle="tooltip" data-placement="bottom" title="Universe expands faster than ever">Flesh</button>
+        <button type="button" class="btn btn-secondary" id = "Variable" data-dismiss="modal" data-toggle="tooltip" data-placement="bottom" title="There will be much more atoms available from the start">Variable</button>
+        <button type="button" class="btn btn-secondary" id = "Singularity" data-dismiss="modal">Singularity</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Launched</button>
+
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Empty space</button>
+      </div>
+    </div>
+  </div>
+</div>
 								
 
 <script src="js/Buttons.js"></script>
