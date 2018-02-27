@@ -120,6 +120,12 @@ div.col-sm-2{
 
 }
 
+#saveGame, #resetGame {
+    float: right;
+    display: flex;
+    flex-direction: column;
+}
+
 
 
 

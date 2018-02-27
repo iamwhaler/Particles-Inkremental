@@ -1,51 +1,46 @@
+const PlayerClass = function() {
 
-var Player = { 
-
-// Elemental particles
-
-	Strings: 0,	
-	Ups: 0,
-	Downs: 0,
+	this.Strings = 0;	
+	this.Ups = 0;
+	this.Downs = 0;
 
 // Structure particles
 
-	Energy: 0, 
-	Protons: 0,
-	Neutrons: 0,
-	Electrons: 0,
+	this.Energy = 0;
+	this.Protons = 0;
+	this.Neutrons = 0;
+	this.Electrons = 0;
 
 // Atom nucleus
 
-	Hydrogen: 0,
-   
-	Helium: 0,
-	Carbon: 0,
-	Oxygen: 0,
-	Nitrogen: 0,
+	this.Hydrogen = 0;
+	this.Helium = 0;
+	this.Carbon = 0;
+	this.Oxygen = 0;
+	this.Nitrogen = 0;
 
 // Molecules T1
 
-	H2: 0,
-	He2: 0,
-	N2: 0,
-	O2: 0,
+	this.H2 = 0;
+	this.He2 = 0;
+	this.N2 = 0;
+	this.O2 = 0;
 
 // Stars T1
-	Hydrogen_Star: 0,
+	this.Hydrogen_Star = 0;
 
 
 // Molecules T2
 
-	CH4: 0,
-	H20: 0,
-	NH3: 0,
+	this.CH4 = 0;
+	this.H20 = 0;
+	this.NH3 = 0;
 
+	this.Chaos = 0;
 
-	Chaos: 0
 }
 
-
-
+var Player = new PlayerClass();
 
 var getState = {
 	StringsCost: '[' + 1 + ' ' + 'click]',
@@ -72,5 +67,50 @@ var getState = {
 	OxygenCost: '[8E 8P 8(9)N]'
 }
 
+
+var emptyProgress = { 
+
+// Elemental particles
+
+	Strings: 0,	
+	Ups: 0,
+	Downs: 0,
+
+// Structure particles
+
+	Energy: 0, 
+	Protons: 0,
+	Neutrons: 0,
+	Electrons: 0,
+
+// Atom nucleus
+
+	Hydrogen: 0,
+	Helium: 0,
+	Carbon: 0,
+	Oxygen: 0,
+	Nitrogen: 0,
+
+// Molecules T1
+
+	H2: 0,
+	He2: 0,
+	N2: 0,
+	O2: 0,
+
+// Stars T1
+	Hydrogen_Star: 0,
+
+
+// Molecules T2
+
+	CH4: 0,
+	H20: 0,
+	NH3: 0,
+
+
+	Chaos: 0,
+
+};
 
 

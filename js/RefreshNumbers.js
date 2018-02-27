@@ -1,5 +1,8 @@
 $(document).ready(function () {
 
+setInterval(saveGame, 100000)
+loadGame();
+
 window.setInterval(refreshNumbers, 200); 
 
 function refreshNumbers() {
