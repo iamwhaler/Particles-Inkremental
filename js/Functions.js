@@ -1,21 +1,16 @@
 "use strict";
 
-function AddRandomBasicParticle() {
-			let _modifier1 = 1;
-			let _modifier2 = 1;
-			let _modifier3 = 0.1;
+function AddRandomBasicParticle(mod1, mod2, mod3 ) {
 
 			let upProb = 33.3;
 			let downProb = 66.6;
 			let electronProb = 99.9;
 			let randomNumber = getProbability(1, 100);
 
-				//let ups_sumbol = "Ups";
-
-			if (randomNumber < upProb) {Player.Ups=Player.Ups+ _modifier1}
-			else if (randomNumber < downProb) {Player.Downs=Player.Downs + _modifier2}			
-			else {Player.Electrons=Player.Electrons + _modifier3};
-
+			if (randomNumber < upProb) {Player.Ups += mod1 }
+			else if (randomNumber < downProb) {Player.Downs += mod2 }			
+			else {Player.Electrons += mod3 };
+		
 	};		
 
 //Molecules T1
