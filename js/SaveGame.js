@@ -13,6 +13,7 @@ function loadGame() {
 function resetGame() {
 	Player = new PlayerClass;
 	console.log("You've started a new game")
+	saveGame();
 }
 
 $('#saveGame').click(saveGame);

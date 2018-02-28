@@ -3,30 +3,6 @@
 $('button').addClass('btn btn-light');
 
 
-
-$(document).ready(function () {
-	$('#StringsCost').html( getState.StringsCost )
-	$('#stringsInfo').html (getState.StringsInfo)
-
-
-	$('#UpsCost').html ( getState.UpsCost )
-	$('#UpsInfo').html (getState.UpsInfo)
-
-
-	$('#DownsCost').html( getState.DownsCost )
-	
-	$('#ElectronsCost').html( getState.ElectronsCost)
-	$('#ProtonsCost').html( getState.ProtonsCost)
-	$('#NeutronsCost').html( getState.NeutronsCost)
-
-	$('#HydrogenCost').html( getState.HydrogenCost)
-	$('#HeliumCost').html( getState.HeliumCost)
-
-
-
-});
-
-
 $(document).ready(function () {
 
 	
@@ -68,16 +44,8 @@ $('#electronsBut').click(function () {
 
 
 
-$('#hydrogenBut').click(function () {
-		if (Player.Electrons >= 1 && Player.Neutrons >= 1 && Player.Protons >= 1) {
-				Player.Electrons--;
-				Player.Neutrons--;
-				Player.Protons--;
-				Player.Hydrogen++; 
+$('#hydrogenBut').click( () => Hydrogen.Cost() );
 
-				};
-
-		});
 
 $('#heliumBut').click(function () {  // needed to add adding H2 randomly
 	if (Player.Electrons >= 2 && Player.Protons >= 2 && Player.Neutrons >= 2 ) {

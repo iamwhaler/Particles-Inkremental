@@ -3,6 +3,8 @@ $(document).ready(function () {
 setInterval(saveGame, 100000)
 loadGame();
 
+getInfo();
+
 window.setInterval(refreshNumbers, 200); 
 
 function refreshNumbers() {
@@ -23,6 +25,25 @@ function refreshNumbers() {
 
 };
 
+function getInfo() {
+   $('#StringsCost').html( getState.StringsCost )
+   $('#stringsInfo').html (getState.StringsInfo)
+
+
+   $('#UpsCost').html ( getState.UpsCost )
+   $('#UpsInfo').html (getState.UpsInfo)
+
+
+   $('#DownsCost').html( getState.DownsCost )
+   
+   $('#ElectronsCost').html( getState.ElectronsCost)
+   $('#ProtonsCost').html( getState.ProtonsCost)
+   $('#NeutronsCost').html( getState.NeutronsCost)
+
+   $('#HydrogenCost').html( getState.HydrogenCost)
+   $('#HeliumCost').html( getState.HeliumCost)
+
+}
 
 
 });

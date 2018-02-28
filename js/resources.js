@@ -1,23 +1,23 @@
-const Atom = (Protons, Neutrons, Electrons) => ({
-	Cost: {
-		Protons,
-		Neutrons,
-		Electrons,
-	},
+class Atom {
+		constructor (Name, Reward, Protons, Electrons, Neutrons) {
+			this.Name = Name;
+			this.Reward = Reward;
+			this.Protons = Protons;
+			this.Electrons = Electrons;
+			this.Neutrons = Neutrons;
+		}
 
-})
+		Cost(Name, Reward, Protons, Electrons, Neutrons) {
+			if (Player.Electrons >= this.Electrons && Player.Neutrons >= this.Neutrons && Player.Protons >= this.Protons) {
+				let Counter =  0;
+				Counter += this.Reward;
+				Player[this.Name] = Counter;
+				Player.Protons -= this.Protons;
+				Player.Electrons -= this.Electrons;
+				Player.Neutrons -= this.Neutrons;
+			}
+		}
 
-const substractCost = (Player, Atom) => {
+};
 
-	const Protons = Player.Protons - Atom.Cost.Protons
-	const Neutrons = Player.Neutrons - Atom.Cost.Neutrons
-	const Electrons = Player.Electrons - Atom.Cost.Electrons
-
-	return {
-		...Player,
-		Protons: Protons,
-		Neutrons: Neutrons,
-		Electrons: Electrons,
-	}
-}
-
+let Hydrogen = new Atom("Hydrogen", 1, 1, 1, 1);
