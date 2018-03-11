@@ -32,7 +32,7 @@ $('#hydrogenBut').click( () => Hydrogen.Cost() );
 $('#heliumBut').click( () => Helium.Cost() );
 
 
-let multiplier = 1; 
+const multiplier = 1; 
 
 $('#h2But').click(function () {  // needed to add adding H2 randomly
 				

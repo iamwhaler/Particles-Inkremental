@@ -1,7 +1,6 @@
 import _ from 'lodash'
 
-import PlayerObj from './src/Player.js'
-import PlayerClassObj from './src/Player.js'
+import {Player} from './src/Player.js'
 import Buttons from './src/Buttons.js'
 import RefreshNumbers from './src/RefreshNumbers.js'
 import Functions from './src/Functions.js'

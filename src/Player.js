@@ -43,7 +43,7 @@ const PlayerClass = function() {
 
 };
 
-const Player = new PlayerClass();
+export let Player = new PlayerClass();
 
 var getState = {
 	StringsCost: '[' + 1 + ' ' + 'click]',
@@ -68,8 +68,5 @@ var getState = {
 	CarbonCost: '[6E 6P 6N]',
 
 	OxygenCost: '[8E 8P 8(9)N]'
-};
+};	
 
-
-export {Player as PlayerObj}
-export {PlayerClass as PlayerClassObj}
