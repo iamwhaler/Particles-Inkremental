@@ -48,11 +48,10 @@
 .container-fluid {
     display: flex;
     flex-direction: column;
-
 }
 
 
-.column-bar{
+.column-bar {
     display: flex;
     align-items: stretch;
     width: 100%;
@@ -97,7 +96,7 @@ button {
 .btn-tooltip {
 
     position: absolute;
-    top: 0;
+    top: -50%;
     left: 100%;
     background: #f0f0f0;
     padding: 5px;
@@ -105,8 +104,8 @@ button {
     opacity: 0;
     z-index: 2;
     transition: opacity .3s;
+    width: 150px;
     white-space: normal;
-    width: 180px;
     display: flex;
     font-size: small;
     display: none;
@@ -114,13 +113,12 @@ button {
 
 .info:hover ~ .btn-tooltip{
     opacity: 1;
-    display: block
+    display: block;
 }
 
 
-div.col-sm-2{
+div.col-sm-2 {
 	text-shadow: 20px;
-
 }
 
 .basicIcon {	

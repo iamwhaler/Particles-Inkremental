@@ -6,30 +6,33 @@ $(document).ready(function(){
 });
 
 const Universe = class Universe {
-	constructor (strings, speed, handcap, atoms) {
-		this.strings = strings;
-		this.speed = speed;
-		this.handcap = handcap; 
-		this.atoms = atoms;
+	constructor (Strings, Speed, Handcap, Atoms) {
+		this.Strings = Strings;
+		this.Speed = Speed;
+		this.Handcap = Handcap; 
+		this.Atoms = Atoms;
 
-	}
+	};
 
-	tick() {
-		console.log(this.strings)
-		Player.Strings += (this.strings);
-	}
+	StringsReward() {
+		console.log("+ " + this.Strings + " " + "Strings");
+		Player.Strings += this.Strings;
+	};
 
 	getReward() {
-		this.ticker = setInterval( () => this.tick(), 1000);
+		this.ticker = setInterval( () => this.StringsReward(), 1000);
 
-	}
-} 
+	};
+};
 
 
 
-const Flesh  = new Universe(2.5, 10, 2.5, 5)
-const Variable = new Universe(5, 2.5, 2.5, 10)
-const Singularity = new Universe(15, 2.5, 2.5, 0)
-const Launched = new Universe(5, 5, 10, 0)
+const Flesh  = new Universe(2.5, 10, 2.5, 5);
+const Variable = new Universe(5, 2.5, 2.5, 10);
+
+const Distressed = new Universe(1.5, 2.5, 2.5, 0);
+
+const Launched = new Universe(5, 5, 10, 0);
+
 
 

@@ -26,15 +26,17 @@ const PlayerClass = function() {
 	this.N2 = 0;
 	this.O2 = 0;
 
-// Stars T1
-	this.Hydrogen_Star = 0;
 
 
 // Molecules T2
 
+	this.CO2 = 0;
 	this.CH4 = 0;
 	this.H20 = 0;
 	this.NH3 = 0;
+
+
+	this.H2_Star = 0;
 
 	this.Chaos = 0;
 

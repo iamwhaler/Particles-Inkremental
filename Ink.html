@@ -11,9 +11,7 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-
-
+	
 
 <title>Increment science</title>
 </head>
@@ -35,11 +33,9 @@
 				
 			
 
-			<div class="parallax-pattern-overlay">
 			<div class="container text-center" style="height:120px;">
 			
 			<div ><h2>INK</h2></div>
-			</div>
 			</div>
 		</header>
 
@@ -48,7 +44,8 @@
       <li><a>
 			Basic particles
 			<img src="img/basic_particles.png" class="basicIcon" >
-		</a></li>
+		</a>
+	</li>
 
       <li><a>
 			Atom nucleus
@@ -148,9 +145,7 @@
 				Neutrons: <a id ='counterNeutrons'> 0 </a>
 				<br>
 				<div id = NeutronsCost> </div>
-					<i class="info"></i>
-					<div class="btn-tooltip" id = "neutronsInfo"></div>
-
+					
 			</button>
 		</div>
 </div>
@@ -191,11 +186,17 @@
 
 <div class = "Column">
 		<div class = "button">
-			<button id = 'HydrogenStarBut' type = "button" class = "btn btn-outline-primary" disabled> 
-				 Hydrogen Star: <a id = 'counterHydrogenStar'> 0 </a>
+			<button id = 'H2_StarBut' type = "button" class = "btn btn-outline-primary" > 
+				 Hydrogen Star: <a id = 'counterH2_Star'> 0 </a>
+				 <i class="info"></i>
+				<div class="btn-tooltip" id = "H2_Star_Cost"></div>
+				<div class = "percent_left" id = "H2_Star_Percent_Left"></div>
+
 			</button>
 		</div>
 </div>
+
+
 </div>
 
 
@@ -228,7 +229,7 @@
  
         <button type="button" class="btn btn-secondary" id = "Flesh" data-dismiss="modal" data-toggle="tooltip" data-placement="bottom" title="Universe expands faster than ever">Flesh</button>
         <button type="button" class="btn btn-secondary" id = "Variable" data-dismiss="modal" data-toggle="tooltip" data-placement="bottom" title="There will be much more atoms available from the start">Variable</button>
-        <button type="button" class="btn btn-secondary" id = "Singularity" data-dismiss="modal">Singularity</button>
+        <button type="button" class="btn btn-secondary" id = "Singularity" data-dismiss="modal">Distressed</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Launched</button>
 
         <button type="button" class="btn btn-primary" data-dismiss="modal">Empty space</button>
@@ -236,8 +237,9 @@
     </div>
   </div>
 </div>
-								
+					
 
+<script src="js/Stars.js"></script>
 <script src="js/Buttons.js"></script>
 <script src = "js/RefreshNumbers.js"></script>
 <script src="js/Player.js"></script>
@@ -245,6 +247,8 @@
 <script src = "js/StartingUniverse.js"></script>
 <script src = "js/SaveGame.js"></script>
 <script src = "js/Resources.js"></script>
+<script src="js/time.js"></script>
+
 
 
 </body>

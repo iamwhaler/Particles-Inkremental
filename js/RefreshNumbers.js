@@ -6,6 +6,7 @@ loadGame();
 getInfo();
 
 window.setInterval(refreshNumbers, 200); 
+window.setInterval(getInfo, 1000); 
 
 function refreshNumbers() {
    		
@@ -21,9 +22,16 @@ function refreshNumbers() {
 
    		document.getElementById("counterH2").innerHTML = +Player.H2.toFixed(2);
 
-   		document.getElementById("counterHydrogenStar").innerHTML = +Player.Hydrogen_Star.toFixed(2);
-
+         document.getElementById("counterH2_Star").innerHTML = +Player.H2_Star.toFixed(2);
 };
+
+
+function percentLeft(Resource, finalAmount) {
+
+   let currentPercent = (Resource*100)/finalAmount
+   return currentPercent;
+
+}
 
 function getInfo() {
    $('#StringsCost').html( getState.StringsCost )
@@ -42,6 +50,11 @@ function getInfo() {
 
    $('#HydrogenCost').html( getState.HydrogenCost)
    $('#HeliumCost').html( getState.HeliumCost)
+
+   $('#H2_Star_Cost').html( Player.H2 + "/" + H2_Star.H2)
+   $('#H2_Star_Percent_Left').html( percentLeft( Player.H2, H2_Star.H2) + "%" );
+
+
 
 }
 

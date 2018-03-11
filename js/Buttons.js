@@ -53,22 +53,6 @@ $('#h2But').click(function () {  // needed to add adding H2 randomly
 				});
 
 
-$('#HydrogenStarBut').click(function() {
-		
-		if(Player.H2>50) {
-			Player.H2 -= 50;
-			Player.Hydrogen_Star++;
-		if (Player.Hydrogen_Star>=1) {
-
-
-			const boostRepeat = setInterval(function() {
-			const boostValue = 2;
-
-			Player.Strings += boostValue * (1/Player.Hydrogen_Star);
-			}, 1000)
-		}
-	}
-});
+$("#H2_StarBut").click( () => H2_Star.Cost() );
 
 });
-
