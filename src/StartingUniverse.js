@@ -1,21 +1,21 @@
 
 export class Universe {
-    constructor (Strings, Speed, Handcap, Atoms) {
-        this.Strings = Strings;
-        this.Speed = Speed;
-        this.Handcap = Handcap;
-        this.Atoms = Atoms;
+    constructor (strings, speed, handcap, atoms) {
+        this.strings = strings;
+        this.speed = speed;
+        this.handcap = handcap;
+        this.atoms = atoms;
 
-    };
+    }
 
-    StringsReward(player) {
+    stringsReward(player) {
         console.log("+ " + this.Strings + " " + "Strings");
         player.Strings += this.Strings;
-    };
+    }
 
     getReward(player) {
         this.ticker = setInterval( () => this.StringsReward(player), 1000);
-    };
+    }
 }
 
 

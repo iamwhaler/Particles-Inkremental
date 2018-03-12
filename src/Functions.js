@@ -22,8 +22,7 @@ export let getState = {
     CarbonCost: '[6E 6P 6N]',
 
     OxygenCost: '[8E 8P 8(9)N]'
-};
-
+}
 
 function getProbability(min, max) {
     return Math.random() * (max - min) + min;
@@ -44,28 +43,12 @@ export let addRandomBasicParticle = function(player, mod1, mod2, mod3) {
 }
 
 
-//Molecules T1
 
-export let H2_Reward = function(player) {
-
-    let lowerRange = 0.1;
-    let stringsModifier = getProbability(lowerRange , 1);
-
-    player.Strings = player.Strings - (player.Strings * stringsModifier);
-
-
-
-    addRandomBasicParticle();  // FIXME: call without arguments
-    $('#boostStrings').html( "("+ stringsModifier.toFixed(3)+ "/sec)");
-    // add the more you use the higher this shit},)
-    lowerRange++;
-}
 
 
 export let refreshNumbers = function(player) {
     //console.warn(player)
 
-    console.warn('refreshing numbers');
     document.getElementById("counterStrings").innerHTML = +player.Strings.toFixed(2);
     document.getElementById("counterUps").innerHTML = +player.Ups.toFixed(2);
     document.getElementById("counterDowns").innerHTML = +player.Downs.toFixed(2);
@@ -82,8 +65,8 @@ export let refreshNumbers = function(player) {
 }
 
 
-export let percentLeft = function(Resource, finalAmount) {
-    let currentPercent = (Resource * 100) / finalAmount;
+export let percentLeft = function(resource, finalAmount) {
+    let currentPercent = (resource * 100) / finalAmount;
     return currentPercent;
 }
 

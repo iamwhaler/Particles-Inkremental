@@ -3,24 +3,24 @@ import { percentLeft } from './Functions';
 
 
 export class Star {
-    constructor (Name, Reward, H2, Helium, CO2) {
-        this.Name = Name;
-        this.Reward = Reward;
+    constructor (name, reward, H2, helium, CO2) {
+        this.name = name;
+        this.reward = reward;
         this.H2 = H2;
-        this.Helium = Helium;
+        this.helium = helium;
         this.CO2 = CO2;
     }
 
 
-    Cost(Player, Name, Reward, H2, Helium, CO2) { // FIXME: unused arguments
+    cost(player) {
 
         var clicks = 0;
 
-        if (Player.H2 >= this.H2 && Player.Helium >= this.Helium && Player.CO2 >= this.CO2) {
+        if (Player.H2 >= this.H2 && Player.Helium >= this.helium && Player.CO2 >= this.CO2) {
 
-            Player[this.Name] += this.Reward;
+            Player[this.name] += this.reward;
             Player.H2 -= this.H2;
-            Player.Helium -= this.Helium;
+            Player.Helium -= this.helium;
             Player.CO2 -= this.CO2;
 
             clicks++;
@@ -34,12 +34,12 @@ export class Star {
 
 
 
-    AutoGenerate(Player, Name, Reward, H2, Helium, CO2, Cost) { // FIXME: unused arguments
+    autoGenerate(player) { 
         Cost();
         setInterval( function(){if ( percentLeft(Player.H2, this.H2)>150 ){
             Cost()
         }}, 1000 );
     }
-};
+}
 
 

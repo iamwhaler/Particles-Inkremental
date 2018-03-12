@@ -2,21 +2,20 @@
 import { addRandomBasicParticle } from './Functions';
 
 export class String {
-    constructor(Name, Strings) {
-        this.Name = Name;
-        this.Strings = Strings;
+    constructor(name, strings) {
+        this.name = name;
+        this.strings = strings;
     }
 
-    Cost(player, Name) {
-        console.log('calculating string cost')
+    cost(player) {
+        console.log("Strings Cost")
         addRandomBasicParticle(player, 1, 1, 0.09);
         return false;
     }
 
-    ConvertString(player) {
+    convertString(player) {
         console.log('string conversion')
         if (player.Strings > 1) {
-            console.warn('in progress');
             addRandomBasicParticle(player, 1, 1, 0.09);
         }
     }
@@ -27,20 +26,20 @@ export class String {
 //Particles
 
 export class Particle {
-    constructor (Name, Reward, Ups, Downs) {
-        this.Name = Name;
-        this.Reward = Reward;
-        this.Ups = Ups;
-        this.Downs = Downs;
+    constructor (name, reward, ups, downs) {
+        this.name = name;
+        this.reward = reward;
+        this.ups = ups;
+        this.downs = downs;
     }
 
-    Cost(player, Name, Reward, Ups, Downs) { // FIXME: unused arguments
+    cost(player) { 
         console.log('particle cost')
-        if (player.Ups >= this.Ups && player.Downs >= this.Downs) {
+        if (player.Ups >= this.ups && player.Downs >= this.downs) {
             console.warn('calculation in progress')
-            player[this.Name] += this.Reward;
-            player.Ups -= this.Ups;
-            player.Downs -= this.Downs;
+            player[this.name] += this.reward;
+            player.Ups -= this.ups;
+            player.Downs -= this.downs;
         }
     }
 }
@@ -48,22 +47,22 @@ export class Particle {
 // Atoms
 
 export class Atom {
-    constructor (Name, Reward, Protons, Electrons, Neutrons) {
-        this.Name = Name;
-        this.Reward = Reward;
-        this.Protons = Protons;
-        this.Electrons = Electrons;
-        this.Neutrons = Neutrons;
+    constructor (name, reward, protons, electrons, neutrons) {
+        this.name = name;
+        this.reward = reward;
+        this.protons = protons;
+        this.electrons = electrons;
+        this.neutrons = neutrons;
     }
 
-    Cost(player, Name, Reward, Protons, Electrons, Neutrons) {
+    cost(player) {
         console.log('atom cost')
-        if (player.Electrons >= this.Electrons && player.Neutrons >= this.Neutrons && player.Protons >= this.Protons) {
+        if (player.Electrons >= this.electrons && player.Neutrons >= this.neutrons && player.Protons >= this.protons) {
             console.warn('calculation in progress')
-            player[this.Name] += this.Reward;
-            player.Protons -= this.Protons;
-            player.Electrons -= this.Electrons;
-            player.Neutrons -= this.Neutrons;
+            player[this.name] += this.reward;
+            player.Protons -= this.protons;
+            player.Electrons -= this.electrons;
+            player.Neutrons -= this.neutrons;
         }
     }
 }
@@ -71,33 +70,26 @@ export class Atom {
 
 // Simple molecules
 
-export class Molecule_T1 { // nado dumat'
-    constructor (Name, Reward, ) {
-        this.Name = Name;
-        this.Reward = Reward;
-        this.Hydrogen = Hydrogen;
-        this.Carbon = Carbon;
-        this.Oxygen = Oxygen;
+export class Molecule_T1 { 
+    constructor (name, reward, hydrogen, carbon, oxygen) {
+        this.name = name;
+        this.reward = reward;
+        this.hydrogen = hydrogen;
+        this.carbon = carbon;
+        this.oxygen = oxygen;
     }
 
-    Cost(player, Name, Reward, Protons, Electrons, Neutrons) { // FIXME: unused arguments
-        if (player.Electrons >= this.Electrons && player.Neutrons >= this.Neutrons && player.Protons >= this.Protons) {
-            player[this.Name] += this.Reward;
-            player.Protons -= this.Protons;
-            player.Electrons -= this.Electrons;
-            player.Neutrons -= this.Neutrons;
-        }
-    }
+   
 }
 
 
 export class Organic_Molecule {
-    constructor (Name, Reward, Carbon, Hydrogen, Oxygen) {
-        this.Name = Name;
-        this.Reward = Reward;
-        this.Carbon = Carbon;
-        this.Hydrogen = Hydrogen;
-        this.Oxygen = Oxygen;
+    constructor (name, reward, carbon, hydrogen, oxygen) {
+        this.name = name;
+        this.reward = reward;
+        this.carbon = carbon;
+        this.hydrogen = hydrogen;
+        this.oxygen = oxygen;
     }
 }
 

@@ -10,6 +10,7 @@ import { Universe } from './src/StartingUniverse.js'
 
 
 $(document).ready(function () {
+    $('button').addClass('btn btn-light');
 
     /// UNIVERSES ///
     const Flesh  = new Universe(2.5, 10, 2.5, 5);
@@ -30,7 +31,7 @@ $(document).ready(function () {
 
     /// STRINGS ///
     const Strings = new String("Strings", 1);
-    let StringConversion = setInterval( () => Strings.ConvertString(Player), 1000);
+ //   let StringConversion = setInterval( () => Strings.ConvertString(Player), 1000);
 
 
     /// STARS ///
@@ -46,9 +47,9 @@ $(document).ready(function () {
 
 
     /// BUTTONS SETUP ///
-    $("#stringBut").click( () => Strings.Cost(Player) );
-    $('#protonsBut').click( () => Proton.Cost(Player) );
-    $('#neutronsBut').click( () => Neutron.Cost(Player) );
+    $("#stringBut").click( () => Strings.cost(Player) );
+    $('#protonsBut').click( () => Proton.cost(Player) );
+    $('#neutronsBut').click( () => Neutron.cost(Player) );
     $('#electronsBut').click(function () {
         console.log('electrons button')
         if (Player.Strings > 0) {
@@ -57,8 +58,8 @@ $(document).ready(function () {
             Player.Electrons += 0.09
         }
     });
-    $('#hydrogenBut').click( () => Hydrogen.Cost(Player) );
-    $('#heliumBut').click( () => Helium.Cost(Player) );
+    $('#hydrogenBut').click( () => Hydrogen.cost(Player) );
+    $('#heliumBut').click( () => Helium.cost(Player) );
 
     $('#h2But').click(function () {  // needed to add adding H2 randomly
         if (Player.Hydrogen >= 2) {
@@ -79,7 +80,7 @@ $(document).ready(function () {
             }
         }
     });
-    $("#H2_StarBut").click( () => H2_Star.Cost(Player) );
+    $("#H2_StarBut").click( () => H2_Star.cost(Player) );
 
     $('#saveGame').click(() => saveGame(Player));
     $('#resetGame').click(() => resetGame(Player));
