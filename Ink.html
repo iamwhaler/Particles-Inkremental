@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
+
 	<link rel="shortcut icon" type="image/png" href="https://www.shareicon.net/data/128x128/2016/10/07/841141_science_512x512.png"></link>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
 	<link rel="stylesheet" type="text/css" href="css/style.css"></link>
@@ -11,7 +11,7 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	
+
 
 <title>Increment science</title>
 </head>
@@ -20,9 +20,9 @@
 	<div class = 'container-fluid' id = 'wrapper'>
 		<div class="container">
 		<header>
-			
+
 			<div class="parallax text-center" style="background-image:url(img/solar.jpg)">
-			
+
 				<div id = "resetGame">
 					<button>Reset game</button>
 				</div>
@@ -30,11 +30,11 @@
 				<div id = "saveGame">
 					<button>Save game</button>
 				</div>
-				
-			
+
+
 
 			<div class="container text-center" style="height:120px;">
-			
+
 			<div ><h2>INK</h2></div>
 			</div>
 		</header>
@@ -56,7 +56,7 @@
 			Simple molecules
 			<img src="img/simple_molecules.png" class="basicIcon" >
 		</a></li>
-     
+
       <li><a>
 			Stars
 			<img src="img/star.png" class="basicIcon">
@@ -70,8 +70,8 @@
 <div class="column-bar">
 	<div class="container" style="display: flex;">
 	<div class = "Column">
-	
-	<div class = "button">		
+
+	<div class = "button">
 		<button id = "stringBut">
 			Strings: <a id = 'counterStrings'> 0 </a>
 		<br>
@@ -100,11 +100,11 @@
 
 
 	<div class = "button">
-		<button id = "downsBut"> 
+		<button id = "downsBut">
 		Down Quarks: <a id = 'counterDowns'> 0 </a>
 		<br>
 		<div id = DownsCost> </div>
-		<div id = boostDowns></div> 
+		<div id = boostDowns></div>
 			<i class="info"></i>
 			<div class="btn-tooltip" id = "DownsInfo"></div>
 		</button>
@@ -114,22 +114,22 @@
 <div class = "Column">
 
 		<div class = "button">
-				
-			
+
+
 			<button id = "electronsBut">
 			Electrons: <a id = 'counterElectrons'> 0 </a>
-			
+
 			<div id = ElectronsCost> </div>
 				<i class="info"></i>
 				<div class="btn-tooltip" id = "electronsInfo"></div>
 			</button>
-						
+
 		</div>
 
 
 			<div class = "button">
-				
-				<button id = "protonsBut"> 
+
+				<button id = "protonsBut">
 					Protons: <a id = 'counterProtons'> 0 </a>
 					<br>
 					<div id = ProtonsCost> </div>
@@ -137,15 +137,15 @@
 						<div class="btn-tooltip" id = "protonsInfo"></div>
 				</button>
 			</div>
-					
-	
+
+
 
 		<div class = "button">
-			<button id = "neutronsBut"> 
+			<button id = "neutronsBut">
 				Neutrons: <a id ='counterNeutrons'> 0 </a>
 				<br>
 				<div id = NeutronsCost> </div>
-					
+
 			</button>
 		</div>
 </div>
@@ -155,9 +155,9 @@
 <div class = "Column">
 
 		<div class = "button">
-						
+
 			<button id = "hydrogenBut">
-				Hydrogen: <a id = 'counterHydrogen'> 0 </a> 
+				Hydrogen: <a id = 'counterHydrogen'> 0 </a>
 				<br>
 				<div id = HydrogenCost> </div>
 			</button>
@@ -166,19 +166,19 @@
 
 		<div class = 'button'>
 
-			<button id = 'h2But'> 			
+			<button id = 'h2But'>
 			Synth H2 <a id = 'counterH2'> 0 </a>
- 			</button> 
+ 			</button>
 		</div>
-						
-	
+
+
 		<div class = "button">
-			
-			<button id = 'heliumBut'> 
+
+			<button id = 'heliumBut'>
 				Helium: <a id = 'counterHelium'> 0 </a>
 				<br>
 				<div id = HeliumCost> </div>
- 
+
 			</button>
 		</div>
 </div>
@@ -186,7 +186,7 @@
 
 <div class = "Column">
 		<div class = "button">
-			<button id = 'H2_StarBut' type = "button" class = "btn btn-outline-primary" > 
+			<button id = 'H2_StarBut' type = "button" class = "btn btn-outline-primary" >
 				 Hydrogen Star: <a id = 'counterH2_Star'> 0 </a>
 				 <i class="info"></i>
 				<div class="btn-tooltip" id = "H2_Star_Cost"></div>
@@ -200,7 +200,7 @@
 </div>
 
 
-		
+
 
 	</div>
 	</div>
@@ -214,7 +214,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Welcome to the Big Bang moment</h5>
- 
+
       </div>
       <div class="modal-body">
         You are on the start of the new Universe. You change the way it expands. You manage what does it consist of.
@@ -225,8 +225,8 @@
       </div>
 
       <div class="modal-footer">
-        
- 
+
+
         <button type="button" class="btn btn-secondary" id = "Flesh" data-dismiss="modal" data-toggle="tooltip" data-placement="bottom" title="Universe expands faster than ever">Flesh</button>
         <button type="button" class="btn btn-secondary" id = "Variable" data-dismiss="modal" data-toggle="tooltip" data-placement="bottom" title="There will be much more atoms available from the start">Variable</button>
         <button type="button" class="btn btn-secondary" id = "Singularity" data-dismiss="modal">Distressed</button>
@@ -237,17 +237,20 @@
     </div>
   </div>
 </div>
-					
 
-<script src="js/Stars.js"></script>
-<script src="js/Buttons.js"></script>
-<script src = "js/RefreshNumbers.js"></script>
-<script src="js/Player.js"></script>
-<script src ="js/Functions.js"></script>
-<script src = "js/StartingUniverse.js"></script>
-<script src = "js/SaveGame.js"></script>
-<script src = "js/Resources.js"></script>
-<script src="js/time.js"></script>
+<script src="src/bundle.js"></script>
+
+<!--
+<script src="src/Stars.js"></script>
+<script src="src/Buttons.js"></script>
+<script src = "src/RefreshNumbers.js"></script>
+<script src="src/Player.js"></script>
+<script src ="src/Functions.js"></script>
+<script src = "src/StartingUniverse.js"></script>
+<script src = "src/SaveGame.js"></script>
+<script src = "src/Resources.js"></script>
+<script src="src/time.js"></script>
+-->
 
 
 
