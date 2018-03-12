@@ -1,7 +1,7 @@
 # Particles-Inkremental
 <h3> Incremental game about the born of the Universe </h3>
 
-<p> To run, use npm install lodash:
+<p> To run, use:
 <br/>
  npm i -g npm
 <br />
