@@ -3,4 +3,8 @@
 .AppleDouble
 .LSOverride
 
+dist/
+
 node_modules/
+
+.idea/

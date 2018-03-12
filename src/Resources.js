@@ -1,109 +1,104 @@
-export default 
-//String
 
-class String {
-		constructor (Name, Strings) {
-			this.Name = Name;
-			this.Strings = Strings;
-		}
+import { addRandomBasicParticle } from './Functions';
 
-		Cost(Name){
-			AddRandomBasicParticle(1, 1, 0.09);
-			return false;
-		}
+export class String {
+    constructor(Name, Strings) {
+        this.Name = Name;
+        this.Strings = Strings;
+    }
 
-		ConvertString() {
-			if (Player.Strings>1) {
-				AddRandomBasicParticle(1, 1, 0.09);
-			}
-		}
-};
+    Cost(player, Name) {
+        console.log('calculating string cost')
+        addRandomBasicParticle(player, 1, 1, 0.09);
+        return false;
+    }
 
-const Strings = new String("Strings", 1);
-let StringConversion = setInterval ( () => Strings.ConvertString(), 1000);
+    ConvertString(player) {
+        console.log('string conversion')
+        if (player.Strings > 1) {
+            console.warn('in progress');
+            addRandomBasicParticle(player, 1, 1, 0.09);
+        }
+    }
+}
+
 
 
 //Particles
 
-class Particle {
-		constructor (Name, Reward, Ups, Downs) {
-			this.Name = Name;
-			this.Reward = Reward;
-			this.Ups = Ups;
-			this.Downs = Downs;
-		}
+export class Particle {
+    constructor (Name, Reward, Ups, Downs) {
+        this.Name = Name;
+        this.Reward = Reward;
+        this.Ups = Ups;
+        this.Downs = Downs;
+    }
 
-		Cost(Name, Reward, Ups, Downs) {
-			if (Player.Ups >= this.Ups && Player.Downs >= this.Downs) {
-				Player[this.Name] += this.Reward;
-				Player.Ups -= this.Ups;
-				Player.Downs -= this.Downs;
-			}
-		}
-};
-
-const Proton = new Particle("Protons", 1, 2, 1);
-const Neutron = new Particle("Neutrons", 1, 1, 2);
-
+    Cost(player, Name, Reward, Ups, Downs) { // FIXME: unused arguments
+        console.log('particle cost')
+        if (player.Ups >= this.Ups && player.Downs >= this.Downs) {
+            console.warn('calculation in progress')
+            player[this.Name] += this.Reward;
+            player.Ups -= this.Ups;
+            player.Downs -= this.Downs;
+        }
+    }
+}
 
 // Atoms
 
-class Atom {
-		constructor (Name, Reward, Protons, Electrons, Neutrons) {
-			this.Name = Name;
-			this.Reward = Reward;
-			this.Protons = Protons;
-			this.Electrons = Electrons;
-			this.Neutrons = Neutrons;
-		}
+export class Atom {
+    constructor (Name, Reward, Protons, Electrons, Neutrons) {
+        this.Name = Name;
+        this.Reward = Reward;
+        this.Protons = Protons;
+        this.Electrons = Electrons;
+        this.Neutrons = Neutrons;
+    }
 
-		Cost(Name, Reward, Protons, Electrons, Neutrons) {
-			if (Player.Electrons >= this.Electrons && Player.Neutrons >= this.Neutrons && Player.Protons >= this.Protons) {
-				Player[this.Name] += this.Reward;
-				Player.Protons -= this.Protons;
-				Player.Electrons -= this.Electrons;
-				Player.Neutrons -= this.Neutrons;
-			}
-		}
+    Cost(player, Name, Reward, Protons, Electrons, Neutrons) {
+        console.log('atom cost')
+        if (player.Electrons >= this.Electrons && player.Neutrons >= this.Neutrons && player.Protons >= this.Protons) {
+            console.warn('calculation in progress')
+            player[this.Name] += this.Reward;
+            player.Protons -= this.Protons;
+            player.Electrons -= this.Electrons;
+            player.Neutrons -= this.Neutrons;
+        }
+    }
+}
 
-};
-
-const Hydrogen = new Atom("Hydrogen", 1, 1, 1, 1);
-const Helium = new Atom("Helium", 1, 2, 2, 2);
 
 // Simple molecules
 
-class Molecule_T1 { // nado dumat'
-		constructor (Name, Reward, ) {
-			this.Name = Name;
-			this.Reward = Reward;
-			this.Hydrogen = Hydrogen;
-			this.Carbon = Carbon;
-			this.Oxygen = Oxygen;
-		}
+export class Molecule_T1 { // nado dumat'
+    constructor (Name, Reward, ) {
+        this.Name = Name;
+        this.Reward = Reward;
+        this.Hydrogen = Hydrogen;
+        this.Carbon = Carbon;
+        this.Oxygen = Oxygen;
+    }
 
-		Cost(Name, Reward, Protons, Electrons, Neutrons) {
-			if (Player.Electrons >= this.Electrons && Player.Neutrons >= this.Neutrons && Player.Protons >= this.Protons) {
-				Player[this.Name] += this.Reward;
-				Player.Protons -= this.Protons;
-				Player.Electrons -= this.Electrons;
-				Player.Neutrons -= this.Neutrons;
-			}
-		}
-
-};
-
-
-class Organic_Molecule {
-		constructor (Name, Reward, Carbon, Hydrogen, Oxygen) {
-			this.Name = Name;
-			this.Reward = Reward;
-			this.Carbon = Carbon;
-			this.Hydrogen = Hydrogen;
-			this.Oxygen = Oxygen;
-		}
+    Cost(player, Name, Reward, Protons, Electrons, Neutrons) { // FIXME: unused arguments
+        if (player.Electrons >= this.Electrons && player.Neutrons >= this.Neutrons && player.Protons >= this.Protons) {
+            player[this.Name] += this.Reward;
+            player.Protons -= this.Protons;
+            player.Electrons -= this.Electrons;
+            player.Neutrons -= this.Neutrons;
+        }
+    }
+}
 
 
+export class Organic_Molecule {
+    constructor (Name, Reward, Carbon, Hydrogen, Oxygen) {
+        this.Name = Name;
+        this.Reward = Reward;
+        this.Carbon = Carbon;
+        this.Hydrogen = Hydrogen;
+        this.Oxygen = Oxygen;
+    }
 }
 
 
