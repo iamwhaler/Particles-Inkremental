@@ -1,24 +1,32 @@
-export default function SaveGame() {
+import { PlayerClass } from './Player';
 
-function saveGame() {
-	var PlayerJson = JSON.stringify(Player)
-	localStorage.setItem("game", PlayerJson)
-	console.log("Progress has been saved")
+function clearObj(obj) {
+    for (let key in obj) delete obj[key];
 }
 
-function loadGame() {
-	var currentProgress = localStorage.getItem("game")
-	Player = JSON.parse(currentProgress)
-	console.log("Progress has been loaded")
+export let saveGame = function(player) {
+    console.log('saving game')
+    console.log(player)
+    let PlayerJson = JSON.stringify(player);
+    localStorage.setItem("game", PlayerJson)
+    console.log("Progress has been saved");
 }
 
-function resetGame() {
-	Player = new PlayerClass;
-	console.log("Previous progress has been reset")
-	saveGame();
+export let loadGame = function(player) {
+    console.warn(player);
+    let currentProgress = localStorage.getItem("game");
+    console.error(currentProgress)
+    clearObj(player);
+    console.log(player);
+    Object.assign(player, JSON.parse(currentProgress));
+    console.error(player);
+    console.log("Progress has been loaded");
 }
 
-$('#saveGame').click(saveGame);
-$('#resetGame').click(resetGame);
-
-};
+export let resetGame = function(player) {
+    let newPlayer = new PlayerClass();
+    clearObj(player);
+    Object.assign(player, newPlayer);
+    console.log("Previous progress has been reset");
+    saveGame(player);
+}
