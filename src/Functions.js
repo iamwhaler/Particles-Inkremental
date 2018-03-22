@@ -43,25 +43,40 @@ export let addRandomBasicParticle = function(player, mod1, mod2, mod3) {
 }
 
 
+export let drawElement = function(element_id, text) {
+        try {
+            document.getElementById(element_id).innerHTML = text;
+        }
+        catch (e) {
+            message("w error! element_id: " + element_id + " text:  " + text);
+        }
+};
 
 
 
 export let refreshNumbers = function(player) {
-    //console.warn(player)
 
-    document.getElementById("counterStrings").innerHTML = +player.Strings.toFixed(2);
-    document.getElementById("counterUps").innerHTML = +player.Ups.toFixed(2);
-    document.getElementById("counterDowns").innerHTML = +player.Downs.toFixed(2);
+    drawElement("counterStrings", player.Strings.toFixed(2))
+    drawElement("counterUps", player.Ups.toFixed(2))
+    drawElement("counterDowns", player.Downs.toFixed(2))
+    
+    drawElement("counterProtons", player.Protons.toFixed(2))
+    drawElement("counterNeutrons", player.Neutrons.toFixed(2))
+    drawElement("counterElectrons", player.Electrons.toFixed(2))
+    
+    drawElement("counterHydrogen", player.Hydrogen.toFixed(2))
+    drawElement("counterHelium", player.Helium.toFixed(2))
 
-    document.getElementById("counterProtons").innerHTML = +player.Protons.toFixed(2);
-    document.getElementById("counterNeutrons").innerHTML = +player.Neutrons.toFixed(2);
-    document.getElementById("counterElectrons").innerHTML = +player.Electrons.toFixed(2);
-    document.getElementById("counterHydrogen").innerHTML = +player.Hydrogen.toFixed(2);
-    document.getElementById("counterHelium").innerHTML = +player.Helium.toFixed(2);
+    drawElement("counterH2", player.H2.toFixed(2))
+    drawElement("counterH2_Star", player.H2_Star.toFixed(2))
 
-    document.getElementById("counterH2").innerHTML = +player.H2.toFixed(2);
 
-    document.getElementById("counterH2_Star").innerHTML = +player.H2_Star.toFixed(2);
+    drawElement("assets-info", `
+      <p>Neutrons: ${player.Neutrons} </p>
+      <p>Protons: ${player.Protons} </p>
+
+      `)
+
 }
 
 

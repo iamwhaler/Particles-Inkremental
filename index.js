@@ -6,6 +6,8 @@ import { Atom, Molecule_T1, Organic_Molecule, Particle, String } from './src/Res
 import { Star } from './src/Stars.js'
 import { saveGame, loadGame, resetGame } from './src/SaveGame.js'
 import { Universe } from './src/StartingUniverse.js'
+import { drawElement } from './src/Functions.js'
+
 
 
 
@@ -19,6 +21,9 @@ $(document).ready(function () {
     const Launched = new Universe(5, 5, 10, 0);
 
 
+    /// STRINGS ///
+    const Strings = new String("Strings", 1);
+
     /// PARTICLES ///
     const Proton = new Particle("Protons", 1, 2, 1);
     const Neutron = new Particle("Neutrons", 1, 1, 2);
@@ -28,23 +33,29 @@ $(document).ready(function () {
     const Hydrogen = new Atom("Hydrogen", 1, 1, 1, 1);
     const Helium = new Atom("Helium", 1, 2, 2, 2);
 
-
-    /// STRINGS ///
-    const Strings = new String("Strings", 1);
  //   let StringConversion = setInterval( () => Strings.ConvertString(Player), 1000);
+    const H2 = new Molecule_T1("H2", 1, 2, 0, 0, 0);
 
-
+ 
     /// STARS ///
     const H2_Star = new Star("H2_Star", 1, 50, 0, 0);
 
 
     let Player = new PlayerClass();
-    let multiplier = 1;
+
+
+    let getUniverseHeat = function(player){
+        let numberOfStars = previous(Player.H2_Star + Player.He_Star);
+        let existingStars = Player.H2_Star + Player.He_Star;
+        let universeHeat = numberOfStars  / existingStars + (numberOfStrings/sec)
+    }
 
 
     $("#selectUniverse").modal('toggle');
     $('[data-toggle="tooltip"]').tooltip();
 
+
+    /// Starting Universes ///
 
     /// BUTTONS SETUP ///
     $("#stringBut").click( () => Strings.cost(Player) );
@@ -61,32 +72,15 @@ $(document).ready(function () {
     $('#hydrogenBut').click( () => Hydrogen.cost(Player) );
     $('#heliumBut').click( () => Helium.cost(Player) );
 
-    $('#h2But').click(function () {  // needed to add adding H2 randomly
-        if (Player.Hydrogen >= 2) {
-            Player.Hydrogen = Player.Hydrogen - 2;
-            Player.H2 = Player.H2 + 1;
-
-            if (Player.H2  >= 2) {
-                let value1 = 1 * multiplier;
-                let value2 = 1 * multiplier;
-                let value3 = 0.09 * multiplier;
-
-                setInterval( () => {
-                    addRandomBasicParticle(Player, value1 , value2 , value3);
-                    return false
-                }, 1000);
-
-                multiplier *= 1.5
-            }
-        }
-    });
+    $('#H2But').click( () => H2.cost(Player));
     $("#H2_StarBut").click( () => H2_Star.cost(Player) );
 
     $('#saveGame').click(() => saveGame(Player));
     $('#resetGame').click(() => resetGame(Player));
 
 
-    // Save game if there is no save yet
+   /// SAVE GAME ///
+
     if (localStorage.getItem("game") === null) {
         saveGame(Player);
     }
@@ -95,7 +89,7 @@ $(document).ready(function () {
 
     getInfo(Player, H2_Star);
 
-    window.setInterval(() => refreshNumbers(Player), 200);
+    window.setInterval(() => refreshNumbers(Player), 1000);
     window.setInterval(() => getInfo(Player, H2_Star), 1000);
 
 });

@@ -15,11 +15,9 @@ export let saveGame = function(player) {
 export let loadGame = function(player) {
     console.warn(player);
     let currentProgress = localStorage.getItem("game");
-    console.error(currentProgress)
     clearObj(player);
     console.log(player);
     Object.assign(player, JSON.parse(currentProgress));
-    console.error(player);
     console.log("Progress has been loaded");
 }
 

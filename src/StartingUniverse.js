@@ -13,8 +13,8 @@ export class Universe {
         player.Strings += this.Strings;
     }
 
-    getReward(player) {
-        this.ticker = setInterval( () => this.StringsReward(player), 1000);
+    getReward(player, pasteFunction) {
+        let this.ticker = setInterval( () => this[pasteFunction(player)], 1000);
     }
 }
 
