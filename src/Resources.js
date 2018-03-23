@@ -3,15 +3,15 @@ import { addRandomBasicParticle } from './Functions';
 import { refreshNumbers } from './Functions'
 
 export class String {
-    constructor(name, strings) {
+    constructor(name, strings, reward){
         this.name = name;
-        this.strings = strings;
+        this.reward = reward;
     }
 
     cost(player) {
         console.log("Strings Cost")
+        player[this.name] += this.reward;
         addRandomBasicParticle(player, 1, 1, 0.09);
-        return false;
         refreshNumbers(player);
     }
 
@@ -24,11 +24,32 @@ export class String {
     
 }
 
+export class Lepton {
+    constructor(name, reward, strings){
+        this.name = name;
+        this.reward = reward;
+        this.strings = strings;
+    }
+
+    cost(player){
+        let convertedFromStrings = player.Strings/(1+(1/player.Electrons));
+        if (convertedFromStrings>2) {
+          player[this.name] += this.reward;
+          player.Strings -= this.strings;
+        }
+
+        else if(convertedFromStrings>5){
+          setInterval( function(player){
+              player[this.name]+= this.reward + (convertedFromStrings*(player.Ups+player.Downs))
+        }, 1000);
+        }
+        }
+ }
 
 //Particles
 
 export class Particle {
-    constructor (name, reward, ups, downs) {
+    constructor (name, reward, ups, downs){
         this.name = name;
         this.reward = reward;
         this.ups = ups;

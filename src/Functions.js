@@ -25,15 +25,13 @@ export let getState = {
 }
 
 function getProbability(min, max) {
-    return Math.random() * (max - min) + min;
+    return Math.random() * (max - min) + min
 }
-
 
 export let addRandomBasicParticle = function(player, mod1, mod2, mod3) {
 
     let upProb = 33.3;
     let downProb = 66.6;
-    let electronProb = 99.9;
     let randomNumber = getProbability(1, 100);
 
     if (randomNumber < upProb) { player.Ups += mod1 }
@@ -43,13 +41,13 @@ export let addRandomBasicParticle = function(player, mod1, mod2, mod3) {
 }
 
 
-export let drawElement = function(element_id, text) {
-        try {
-            document.getElementById(element_id).innerHTML = text;
-        }
-        catch (e) {
-            message("w error! element_id: " + element_id + " text:  " + text);
-        }
+export let drawElement = function (element_id, text) {
+    try {
+        document.getElementById(element_id).innerHTML = text;
+    }
+    catch (e) {
+        message("w error! element_id: " + element_id + " text:  " + text);
+    }
 };
 
 

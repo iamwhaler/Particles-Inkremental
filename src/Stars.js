@@ -1,9 +1,8 @@
-
 import { percentLeft } from './Functions';
 
 
 export class Star {
-    constructor (name, reward, H2, helium, CO2) {
+    constructor (name, reward, H2, helium, CO2){
         this.name = name;
         this.reward = reward;
         this.H2 = H2;
@@ -12,7 +11,7 @@ export class Star {
     }
 
 
-    cost(player) {
+    cost(player){
 
         var clicks = 0;
 
@@ -34,7 +33,7 @@ export class Star {
 
 
 
-    autoGenerate(player) { 
+    autoGenerate(player){
         Cost();
         setInterval( function(){if ( percentLeft(Player.H2, this.H2)>150 ){
             Cost()

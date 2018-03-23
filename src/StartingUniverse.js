@@ -14,7 +14,6 @@ export class Universe {
     }
 
     getReward(player, pasteFunction) {
-        let this.ticker = setInterval( () => this[pasteFunction(player)], 1000);
     }
 }
 
