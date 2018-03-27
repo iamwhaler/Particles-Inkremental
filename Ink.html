@@ -47,28 +47,28 @@
    	<div class = "container">
    	<div class = "row">
       <div class = "nav-item col-lg-2 col-md-6 col-xs-12">
-			<span>Basic particles</span>
+			<span>Quarks</span>
 			<img src="img/basic_particles.png" class="basicIcon">
 	</div>
 
       <div class = "nav-item col-lg-2 col-md-6 col-xs-12">
-			<span>Atom nucleus</span>
+			<span>Basic particles</span>
 			<img src="img/atoms.png" class="basicIcon">
 		</div>
 
       <div class ="nav-item col-lg-2 col-md-6 col-xs-12">
-			<span>Simple molecules</span>
-			<img src="img/simple_molecules.png" class="basicIcon" >
+			<span>Atom nucleus</span>
+			<img src="img/atom_nucleus.png" class="basicIcon" >
 		</div>
 
 	<div class = "nav-item col-lg-2 col-md-6 col-xs-12">
-			<span>Atom nucleus</span>
-			<img src="img/atoms.png" class="basicIcon">
+			<span>Simple Molecules</span>
+			<img src="img/simple-molecules.png" class="basicIcon">
 		</div>
 	
 	<div class = "nav-item col-lg-2 col-md-6 col-xs-12">
-			<span>Atom nucleus</span>
-			<img src="img/atoms.png" class="basicIcon">
+			<span>Stars</span>
+			<img src="img/star.png" class="basicIcon">
 		</div>
 
       <div class = "nav-item col-lg-2 col-md-6 col-xs-122">
@@ -88,10 +88,11 @@
 
 	<div class = "button">
 		<button id = "stringBut">
-			Strings: <a id = 'counterStrings'> 0 </a>
+			<span>Strings: <a id = 'counterStrings'> 0 </a>
 		<br>
 		<div id = StringsCost></div>
 		<div id = 'boostStrings'></div>
+	</span>
 			<i class="info"></i>
 			<div class="btn-tooltip" id = "stringsInfo"></div>
 		</button>
@@ -102,10 +103,11 @@
 	<div class = "button">
 
 		<button id = "upsBut">
-		Up Quarks: <a id = 'counterUps'> 0 </a>
+		<span>Up Quarks: <a id = "counterUps"> 0 </a>
 		<br>
-		<div id = UpsCost> </div>
-		<div id = 'boostUps'></div>
+		<div id = "UpsCost"> </div>
+		<div id = "boostUps"></div>
+		</span>
 			<i class="info"></i>
 			<div class="btn-tooltip" id = "UpsInfo"></div>
 		</button>
@@ -116,10 +118,11 @@
 
 	<div class = "button">
 		<button id = "downsBut">
-		Down Quarks: <a id = 'counterDowns'> 0 </a>
+		<span>Down Quarks: <a id = 'counterDowns'> 0 </a>
 		<br>
 		<div id = DownsCost> </div>
 		<div id = boostDowns></div>
+		</span>
 			<i class="info"></i>
 			<div class="btn-tooltip" id = "DownsInfo"></div>
 		</button>
@@ -135,9 +138,10 @@
 
 
 			<button id = "electronsBut">
-			Electrons: <a id = 'counterElectrons'> 0 </a>
+			<span>Electrons: <a id = 'counterElectrons'> 0 </a>
 
 			<div id = ElectronsCost> </div>
+			</span>
 				<i class="info"></i>
 				<div class="btn-tooltip" id = "electronsInfo"></div>
 			</button>
@@ -148,9 +152,10 @@
 			<div class = "button">
 
 				<button id = "protonsBut">
-					Protons: <a id = 'counterProtons'> 0 </a>
+					<span>Protons: <a id = 'counterProtons'> 0 </a>
 					<br>
 					<div id = ProtonsCost> </div>
+					</span>
 						<i class="info"></i>
 						<div class="btn-tooltip" id = "protonsInfo"></div>
 				</button>
@@ -160,9 +165,10 @@
 
 		<div class = "button">
 			<button id = "neutronsBut">
-				Neutrons: <a id ='counterNeutrons'> 0 </a>
+				<span>Neutrons: <a id ='counterNeutrons'> 0 </a>
 				<br>
 				<div id = NeutronsCost> </div>
+				</span>
 
 			</button>
 		</div>
@@ -175,9 +181,10 @@
 		<div class = "button">
 
 			<button id = "hydrogenBut">
-				Hydrogen: <a id = 'counterHydrogen'> 0 </a>
+				<span>Hydrogen: <a id = 'counterHydrogen'> 0 </a>
 				<br>
 				<div id = HydrogenCost> </div>
+				</span>
 			</button>
 		</div>
 
@@ -185,9 +192,11 @@
 		<div class = "button">
 
 			<button id = 'heliumBut'>
+				<span>
 				Helium: <a id = 'counterHelium'> 0 </a>
 				<br>
 				<div id = HeliumCost> </div>
+			    </span>
 
 			</button>
 		</div>
@@ -199,9 +208,10 @@
 			<div class = "button">
 
 				<button id = "H2But">
-					H2: <a id = 'counterH2'> 0 </a>
+					<span> H2: <a id = 'counterH2'> 0 </a>
 					<br>
 					<div id = H2Cost></div>
+					</span>
 						<i class="info"></i>
 						<div class="btn-tooltip" id = "H2Info"></div>
 				</button>
@@ -213,10 +223,11 @@
 <div class = "Column col-lg-2 col-md-6 col-xs-12">
 		<div class = "button">
 			<button id = 'H2_StarBut' type = "button" class = "btn btn-outline-primary" >
-				 Hydrogen Star: <a id = 'counterH2_Star'> </a>
+				 <span> Hydrogen Star: <a id = 'counterH2_Star'> </a>
 				 <i class="info"></i>
 				<div class="btn-tooltip" id = "H2_Star_Cost"></div>
 				<div class = "percent_left" id = "H2_Star_Percent_Left"></div>
+				</span>
 
 			</button>
 		</div>
