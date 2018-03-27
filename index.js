@@ -1,8 +1,8 @@
 import _ from 'lodash'
 
 import { PlayerClass } from './src/Player.js';
-import { addRandomBasicParticle, getInfo, getState, refreshNumbers } from './src/Functions.js'
-import { Atom, Molecule_T1, Organic_Molecule, Particle, String, Fermione} from './src/Resources.js'
+import { refreshNumbers, addRandomBasicParticle, getInfo, getState } from './src/Functions.js'
+import { Atom, Molecule_T1, Organic_Molecule, Particle, String, Lepton} from './src/Resources.js'
 import { Star } from './src/Stars.js'
 import { saveGame, loadGame, resetGame } from './src/SaveGame.js'
 import { Universe } from './src/StartingUniverse.js'
@@ -24,7 +24,7 @@ $(document).ready(function () {
     /// STRINGS ///
     const Strings = new String("Strings", 10, 1);
 
-    const Electron = new Lepton("Electrons", 1, 1);
+    const Electron = new Lepton("Electrons", 1);
 
     /// PARTICLES ///
     const Proton = new Particle("Protons", 10, 2, 1);
@@ -40,7 +40,7 @@ $(document).ready(function () {
 
  
     /// STARS ///
-    const H2_Star = new Star("H2_Star", 1, 50, 0, 0);
+    const H2_Star = new Star("H2_Star", 1, "H2", 50, 0, 0);
 
 
 
@@ -48,11 +48,11 @@ $(document).ready(function () {
     let Player = new PlayerClass();
 
 
-    let getUniverseHeat = function(player){
-        let numberOfStars = previous(Player.H2_Star + Player.He_Star);
-        let existingStars = Player.H2_Star + Player.He_Star;
-        let universeHeat = numberOfStars  / existingStars + (numberOfStrings/sec)
-    }
+  let getUniverseHeat = function(player){
+ // previous h2 let numberOfStars = Player.H2_Star + Player.He_Star;
+  let existingStars = Player.H2_Star + Player.He_Star;
+  let universeHeat = numberOfStars  / existingStars + (numberOfStrings/sec)
+}
 
 
     $("#selectUniverse").modal('toggle');
@@ -63,17 +63,16 @@ $(document).ready(function () {
 
     /// BUTTONS SETUP ///
     $("#stringBut").click( () => Strings.cost(Player) );
+   
     $('#protonsBut').click( () => Proton.cost(Player) );
     $('#neutronsBut').click( () => Neutron.cost(Player) );
-
-
     $('#electronsBut').click( () => Electron.cost(Player));
 
     $('#hydrogenBut').click( () => Hydrogen.cost(Player) );
     $('#heliumBut').click( () => Helium.cost(Player) );
 
     $('#H2But').click( () => H2.cost(Player));
-    $("#H2_StarBut").click( () => H2_Star.cost(Player) );
+    $("#H2_StarBut").click( () => H2_Star.cost(Player));
 
     $('#saveGame').click(() => saveGame(Player));
     $('#resetGame').click(() => resetGame(Player));

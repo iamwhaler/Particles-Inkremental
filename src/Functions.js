@@ -1,3 +1,5 @@
+/// interesting effects for randomization - calling funcation with an array as an argument http://learn.javascript.ru/call-apply
+
 
 export let getState = {
     StringsCost: '[' + 1 + ' ' + 'click]',
@@ -54,26 +56,26 @@ export let drawElement = function (element_id, text) {
 
 export let refreshNumbers = function(player) {
 
-    drawElement("counterStrings", player.Strings.toFixed(2))
-    drawElement("counterUps", player.Ups.toFixed(2))
-    drawElement("counterDowns", player.Downs.toFixed(2))
+    drawElement("counterStrings", player.Strings.toFixed(2));
+    drawElement("counterUps", player.Ups.toFixed(2));
+    drawElement("counterDowns", player.Downs.toFixed(2));
     
-    drawElement("counterProtons", player.Protons.toFixed(2))
-    drawElement("counterNeutrons", player.Neutrons.toFixed(2))
-    drawElement("counterElectrons", player.Electrons.toFixed(2))
+    drawElement("counterProtons", player.Protons.toFixed(2));
+    drawElement("counterNeutrons", player.Neutrons.toFixed(2));
+    drawElement("counterElectrons", player.Electrons.toFixed(2));
     
-    drawElement("counterHydrogen", player.Hydrogen.toFixed(2))
-    drawElement("counterHelium", player.Helium.toFixed(2))
+    drawElement("counterHydrogen", player.Hydrogen.toFixed(2));
+    drawElement("counterHelium", player.Helium.toFixed(2));
 
-    drawElement("counterH2", player.H2.toFixed(2))
-    drawElement("counterH2_Star", player.H2_Star.toFixed(2))
+    drawElement("counterH2", player.H2.toFixed(2));
+    drawElement("counterH2_Star", player.H2_Star.toFixed(2));
 
 
     drawElement("assets-info", `
       <p>Neutrons: ${player.Neutrons} </p>
       <p>Protons: ${player.Protons} </p>
 
-      `)
+      `);
 
 }
 

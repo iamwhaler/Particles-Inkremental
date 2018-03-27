@@ -21,30 +21,30 @@ export class String {
             addRandomBasicParticle(player, 1, 1, 0.09);
         }
     }
-    
 }
 
 export class Lepton {
-    constructor(name, reward, strings){
+    constructor(name, reward){
         this.name = name;
         this.reward = reward;
-        this.strings = strings;
+
     }
 
     cost(player){
         let convertedFromStrings = player.Strings/(1+(1/player.Electrons));
         if (convertedFromStrings>2) {
           player[this.name] += this.reward;
-          player.Strings -= this.strings;
+          player.Strings--;
         }
+        let checkAutomation = setInterval(function(){
+               if (convertedFromStrings>5){
+              player[this.name] += this.reward + (convertedFromStrings*(player.Ups+player.Downs));    
+                }
+        },1000);
 
-        else if(convertedFromStrings>5){
-          setInterval( function(player){
-              player[this.name]+= this.reward + (convertedFromStrings*(player.Ups+player.Downs))
-        }, 1000);
-        }
-        }
- }
+        refreshNumbers(player);    
+    } 
+}
 
 //Particles
 
@@ -73,7 +73,7 @@ export class Particle {
         </div>
             `;
             return html
-        };
+        }
 }
 
 // Atoms

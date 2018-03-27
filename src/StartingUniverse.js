@@ -13,8 +13,6 @@ export class Universe {
         player.Strings += this.Strings;
     }
 
-    getReward(player, pasteFunction) {
-    }
 }
 
 
