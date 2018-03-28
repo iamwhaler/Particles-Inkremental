@@ -87,22 +87,22 @@ export let percentLeft = function(resource, finalAmount) {
 
 
 export let getInfo = function(player, star) {
-   $('#StringsCost').html(getState.StringsCost)
+//   $('#StringsCost').html(getState.StringsCost)
    $('#stringsInfo').html(getState.StringsInfo)
 
 
-   $('#UpsCost').html(getState.UpsCost)
+//   $('#UpsCost').html(getState.UpsCost)
    $('#UpsInfo').html(getState.UpsInfo)
 
 
-   $('#DownsCost').html(getState.DownsCost)
+//   $('#DownsCost').html(getState.DownsCost)
 
-   $('#ElectronsCost').html(getState.ElectronsCost)
-   $('#ProtonsCost').html(getState.ProtonsCost)
-   $('#NeutronsCost').html(getState.NeutronsCost)
+//   $('#ElectronsCost').html(getState.ElectronsCost)
+//   $('#ProtonsCost').html(getState.ProtonsCost)
+//   $('#NeutronsCost').html(getState.NeutronsCost)
 
-   $('#HydrogenCost').html(getState.HydrogenCost)
-   $('#HeliumCost').html(getState.HeliumCost)
+//   $('#HydrogenCost').html(getState.HydrogenCost)
+//   $('#HeliumCost').html(getState.HeliumCost)
 
    $('#H2_Star_Cost').html(player.H2 + "/" + star.H2)
    $('#H2_Star_Percent_Left').html( percentLeft( player.H2, star.H2 ) + "%" );

@@ -54,12 +54,18 @@ $(document).ready(function () {
   let universeHeat = numberOfStars  / existingStars + (numberOfStrings/sec)
 }
 
+    /// 
+    $(".nav-link").click(function(){ 
+        $(".nav-link").removeClass("active");
+        $(this).addClass("active");    
 
-    $("#selectUniverse").modal('toggle');
-    $('[data-toggle="tooltip"]').tooltip();
+    });
+
 
 
     /// Starting Universes ///
+    $("#selectUniverse").modal('toggle');
+    $('[data-toggle="tooltip"]').tooltip();
 
     /// BUTTONS SETUP ///
     $("#stringBut").click( () => Strings.cost(Player) );
@@ -72,7 +78,8 @@ $(document).ready(function () {
     $('#heliumBut').click( () => Helium.cost(Player) );
 
     $('#H2But').click( () => H2.cost(Player));
-    $("#H2_StarBut").click( () => H2_Star.cost(Player));
+    $("#H2_StarBut").click( () => H2_Star.cost(Player) );
+    $("#H2_StarBut").click( () => H2_Star.autoGenerate(Player) );
 
     $('#saveGame').click(() => saveGame(Player));
     $('#resetGame').click(() => resetGame(Player));

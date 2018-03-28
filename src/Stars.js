@@ -14,10 +14,9 @@ export class Star {
 
     cost(player){
 
-        var clicks = 0;
 
         if (player[this.structure] >= this.H2) {
-
+            let clicks = 0;
             player[this.name] += this.reward;
             player.H2 -= this.H2;
             player.Helium -= this.helium;
@@ -26,10 +25,7 @@ export class Star {
             clicks++;
         }
 
-        if (clicks>0 && clicks<2) {
-            setInterval ( () => player.Strings +=  (1/player.H2_Star) , 1000)
-        }
-
+        
         refreshNumbers(player);
 
 
@@ -38,10 +34,9 @@ export class Star {
 
 
     autoGenerate(player){
-        Cost();
-        setInterval( function(){if ( percentLeft(player.H2, this.H2)>150 ){
-            Cost()
-        }}, 1000 );
+        if(player.H2_Star>0 && player.H2_Star<2) {
+         setInterval(function(){ player.Strings += (0.13 * player.H2_Star)} , 1000);
+        }
     }
 }
 
