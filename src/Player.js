@@ -1,4 +1,3 @@
-
 export const PlayerClass = function() {
 
     this.Strings = 0;
@@ -26,8 +25,6 @@ export const PlayerClass = function() {
     this.He2 = 0;
     this.N2 = 0;
     this.O2 = 0;
-
-
 
     // Molecules T2
 

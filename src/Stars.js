@@ -1,5 +1,4 @@
-import { percentLeft } from './Functions';
-
+import { percentLeft, refreshNumbers, checkPrevious } from './Functions';
 
 export class Star {
     constructor (name, reward, structure, H2, helium, CO2){
@@ -14,18 +13,16 @@ export class Star {
 
     cost(player){
 
-
         if (player[this.structure] >= this.H2) {
-            let clicks = 0;
             player[this.name] += this.reward;
             player.H2 -= this.H2;
             player.Helium -= this.helium;
             player.CO2 -= this.CO2;
 
-            clicks++;
         }
-
         
+        setInterval(checkPrevious(player),1000);
+
         refreshNumbers(player);
 
 
@@ -33,11 +30,8 @@ export class Star {
 
 
 
-    autoGenerate(player){
-        if(player.H2_Star>0 && player.H2_Star<2) {
-         setInterval(function(){ player.Strings += (0.13 * player.H2_Star)} , 1000);
-        }
-    }
+   
 }
+
 
 

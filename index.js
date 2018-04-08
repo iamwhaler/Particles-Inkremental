@@ -1,7 +1,7 @@
 import _ from 'lodash'
 
 import { PlayerClass } from './src/Player.js';
-import { refreshNumbers, addRandomBasicParticle, getInfo, getState } from './src/Functions.js'
+import { refreshNumbers, addRandomBasicParticle, getInfo, getState, checkPrevious } from './src/Functions.js'
 import { Atom, Molecule_T1, Organic_Molecule, Particle, String, Lepton} from './src/Resources.js'
 import { Star } from './src/Stars.js'
 import { saveGame, loadGame, resetGame } from './src/SaveGame.js'
@@ -24,11 +24,12 @@ $(document).ready(function () {
     /// STRINGS ///
     const Strings = new String("Strings", 10, 1);
 
-    const Electron = new Lepton("Electrons", 1);
 
     /// PARTICLES ///
     const Proton = new Particle("Protons", 10, 2, 1);
     const Neutron = new Particle("Neutrons", 10, 1, 2);
+    const Electron = new Lepton("Electrons", 1);
+
 
 
     /// ATOMS ///
@@ -54,12 +55,13 @@ $(document).ready(function () {
   let universeHeat = numberOfStars  / existingStars + (numberOfStrings/sec)
 }
 
-    /// 
+    /// navigation tabs ///
     $(".nav-link").click(function(){ 
         $(".nav-link").removeClass("active");
         $(this).addClass("active");    
-
     });
+   
+
 
 
 
@@ -79,7 +81,8 @@ $(document).ready(function () {
 
     $('#H2But').click( () => H2.cost(Player));
     $("#H2_StarBut").click( () => H2_Star.cost(Player) );
-    $("#H2_StarBut").click( () => H2_Star.autoGenerate(Player) );
+   
+ 
 
     $('#saveGame').click(() => saveGame(Player));
     $('#resetGame').click(() => resetGame(Player));

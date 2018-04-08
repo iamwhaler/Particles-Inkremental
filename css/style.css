@@ -93,7 +93,7 @@ button span {
 .info{
     position: absolute;
     top: 5px;
-    right: 5px;
+    right: 10px;
     background: #ccc;
     width: 10px;
     height: 10px;
@@ -110,11 +110,12 @@ button span {
     opacity: 0;
     z-index: 2;
     transition: opacity .3s;
-    width: 150px;
+    width: 250px;
     white-space: normal;
     font-size: small;
     display: none;
 }
+
 
 .column-bar .Column:not(:last-of-type) .btn-tooltip {
     right: 100%;

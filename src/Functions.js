@@ -1,6 +1,5 @@
 /// interesting effects for randomization - calling funcation with an array as an argument http://learn.javascript.ru/call-apply
 
-
 export let getState = {
     StringsCost: '[' + 1 + ' ' + 'click]',
     StringsInfo: 'String starts to fluctuate and create particles',
@@ -29,6 +28,14 @@ export let getState = {
 function getProbability(min, max) {
     return Math.random() * (max - min) + min
 }
+
+
+export let checkPrevious = function(player) {
+       while(player[this.name]<2) { 
+              player.Strings += (0.13 * player.H2_Star);
+        }
+      }
+ 
 
 export let addRandomBasicParticle = function(player, mod1, mod2, mod3) {
 
@@ -77,6 +84,17 @@ export let refreshNumbers = function(player) {
 
       `);
 
+    drawElement("UpsInfo", `
+        <div class = "row">
+          <div class = "col-lg-12 infoBar" id = "stringsInfo">${getState.UpsInfo}</div>
+        </div>
+        <br />
+        <div class = "row">
+          <div class = "col-lg-6 infoBar">Ups:</div>
+          <div class = "col-lg-6 infoBar">${player.Ups} / 10 </div>
+        </div>
+     `)
+
 }
 
 
@@ -92,7 +110,7 @@ export let getInfo = function(player, star) {
 
 
 //   $('#UpsCost').html(getState.UpsCost)
-   $('#UpsInfo').html(getState.UpsInfo)
+//   $('#UpsInfo').html(getState.UpsInfo)
 
 
 //   $('#DownsCost').html(getState.DownsCost)
