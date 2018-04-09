@@ -36,6 +36,5 @@ export const PlayerClass = function() {
 
     this.H2_Star = 0;
 
-    this.Chaos = 0;
 
 };

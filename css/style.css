@@ -7,6 +7,14 @@
     box-sizing: inherit;
  }
 
+.line {
+    border-bottom: solid 1px #DCDCDC;
+}
+
+.line-wrapper {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
 
 .col-lg-2 {
     max-width: 100%;
@@ -15,6 +23,7 @@
 .tabs li a {
     cursor:pointer;
 }
+
 
 .screenswitch .nav-item {
     display:flex;
@@ -93,7 +102,7 @@ button span {
 .info{
     position: absolute;
     top: 5px;
-    right: 10px;
+    right: 5px;
     background: #ccc;
     width: 10px;
     height: 10px;
@@ -103,9 +112,10 @@ button span {
 .btn-tooltip {
     position: absolute;
     top: 0;
+    margin-left: 2px;
     left: 100%;
     background: #f0f0f0;
-    padding: 5px;
+    padding-left: 0px;
     color: #000;
     opacity: 0;
     z-index: 2;
@@ -125,8 +135,6 @@ button span {
     opacity: 1;
     display: block;
 }
-
-
 
 .basicIcon {	
     width: 30px;

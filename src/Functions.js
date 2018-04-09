@@ -79,21 +79,43 @@ export let refreshNumbers = function(player) {
 
 
     drawElement("assets-info", `
-      <p>Neutrons: ${player.Neutrons} </p>
-      <p>Protons: ${player.Protons} </p>
-
+      <div class = "row">
+        <div class = "col-md-6">
+          <span>Neutrons: ${player.Neutrons} </span>
+        </div>
+        <div class = "col-md-6">
+          <span>Protons: ${player.Protons} </span>
+        </div>
+      </div> 
       `);
 
-    drawElement("UpsInfo", `
-        <div class = "row">
-          <div class = "col-lg-12 infoBar" id = "stringsInfo">${getState.UpsInfo}</div>
+    drawElement("stringsInfo", `
+        <div class = "col-lg-12 infoBar">${getState.StringsInfo}</div>
+        <div class = "line-wrapper">
+          <div class = "line">
+          </div>
         </div>
-        <br />
+        
         <div class = "row">
-          <div class = "col-lg-6 infoBar">Ups:</div>
-          <div class = "col-lg-6 infoBar">${player.Ups} / 10 </div>
+          <div class = "col-sm-6 infoBar">Click</div>
+          <div class = "col-sm-6 infoBar">${1}</div>  
+        </div>
+      `)
+
+    drawElement("UpsInfo", `
+        <div class = "col-lg-12 infoBar">${getState.UpsInfo}</div>
+        <div class = "line-wrapper">
+          <div class = "line">
+          </div>
+        </div>
+        
+        <div class = "row">
+          <div class = "col-sm-6 infoBar">String</div>
+          <div class = "col-sm-6 infoBar">${1}</div>
         </div>
      `)
+
+
 
 }
 
@@ -106,7 +128,6 @@ export let percentLeft = function(resource, finalAmount) {
 
 export let getInfo = function(player, star) {
 //   $('#StringsCost').html(getState.StringsCost)
-   $('#stringsInfo').html(getState.StringsInfo)
 
 
 //   $('#UpsCost').html(getState.UpsCost)
