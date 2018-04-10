@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+
+
+  <link rel="shortcut icon" type="image/png" href="https://www.shareicon.net/data/128x128/2016/10/07/841141_science_512x512.png"></link>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+
+
+    <div id="root"></div>
+
+  <link rel="stylesheet" type="text/css" href="css/style.css"></link>
+
+  <div class = 'container-fluid' id = 'wrapper'>
+    
+    <header>
+
+      <div class="parallax text-center" style="background-image:url(img/solar.jpg)">
+        
+        <div id = "assets-info" style="float: left; width: 400px; height: 100px;"> Assets info
+        </div>
+
+        <div id = "resetGame">
+          <button>Reset game</button>
+        </div>
+
+        <div id = "saveGame">
+          <button>Save game</button>
+        </div>
+
+
+
+      <div class="container text-center" style="height:120px;">
+
+      <div ><h2>INK</h2></div>
+      </div>
+    </header>
+
+
+   
+    <nav class = "navbar screenswitch">
+      <div class = "container">
+        <div class = "row">
+          <div class = "tabs">
+          <ul class = "nav nav-tabs">
+
+            <li class = "nav-item">
+              <a class="nav-link active" href="#">T1 Resources</a>
+            </li>
+            <li class = "nav-item">
+              <a class="nav-link" href="#">T2 Resources</a>
+            </li>
+          </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <nav class = "navbar navbar-items">
+    <div class = "container">
+    <div class = "row">
+      <div class = "nav-item col-lg-2 col-md-6 col-xs-12">
+      <span>Quarks</span>
+      <img src="img/basic_particles.png" class="basicIcon">
+  </div>
+
+      <div class = "nav-item col-lg-2 col-md-6 col-xs-12">
+      <span>Basic particles</span>
+      <img src="img/atoms.png" class="basicIcon">
+    </div>
+
+      <div class ="nav-item col-lg-2 col-md-6 col-xs-12">
+      <span>Atom nucleus</span>
+      <img src="img/atom_nucleus.png" class="basicIcon" >
+    </div>
+
+  <div class = "nav-item col-lg-2 col-md-6 col-xs-12">
+      <span>Simple Molecules</span>
+      <img src="img/simple-molecules.png" class="basicIcon">
+    </div>
+  
+  <div class = "nav-item col-lg-2 col-md-6 col-xs-12">
+      <span>Stars</span>
+      <img src="img/star.png" class="basicIcon">
+    </div>
+
+      <div class = "nav-item col-lg-2 col-md-6 col-xs-122">
+  
+    </div>
+  </div>
+</div>
+     </nav>
+</div>
+
+
+<div class="column-bar">
+<div class="container" style="display: flex;">
+<div class = "row">
+<div class = "col-lg-2 col-md-6 col-xs-12">
+
+  <div class = "button">
+    <button id = "stringBut">
+      <span>Strings: <a id = 'counterStrings'> 0 </a>
+    <br>
+    <div id = StringsCost></div>
+    <div id = 'boostStrings'></div>
+  </span>
+      <i class="info"></i>
+      <div class="row btn-tooltip" id = "stringsInfo">
+      </div>
+    </button>
+
+  </div>
+
+
+  <div class = "button">
+
+    <button id = "upsBut">
+    <span>Up Quarks: <a id = "counterUps"> 0 </a>
+    <br>
+    <div id = "UpsCost"> </div>
+    <div id = "boostUps"></div>
+    </span>
+      <i class="info"></i>
+      <div class="row btn-tooltip" id = "UpsInfo"></div>
+
+    </button>
+  </div>
+
+
+
+
+  <div class = "button">
+    <button id = "downsBut">
+    <span>Down Quarks: <a id = 'counterDowns'> 0 </a>
+    <br>
+    <div id = DownsCost> </div>
+    <div id = boostDowns></div>
+    </span>
+      <i class="info"></i>
+      <div class="btn-tooltip" id = "DownsInfo"></div>
+    </button>
+  </div>
+
+</div>
+</div>
+
+<div class = "row">
+<div class = "col-lg-2 col-md-6 col-xs-12">
+
+    <div class = "button">
+
+
+      <button id = "electronsBut">
+      <span>Electrons: <a id = 'counterElectrons'> 0 </a>
+
+      <div id = ElectronsCost> </div>
+      </span>
+        <i class="info"></i>
+        <div class="btn-tooltip" id = "electronsInfo"></div>
+      </button>
+
+    </div>
+
+
+      <div class = "button">
+
+        <button id = "protonsBut">
+          <span>Protons: <a id = 'counterProtons'> 0 </a>
+          <br>
+          <div id = ProtonsCost> </div>
+          </span>
+            <i class="info"></i>
+            <div class="btn-tooltip" id = "protonsInfo"></div>
+        </button>
+      </div>
+
+
+
+    <div class = "button">
+      <button id = "neutronsBut">
+        <span>Neutrons: <a id ='counterNeutrons'> 0 </a>
+        <br>
+        <div id = NeutronsCost> </div>
+        </span>
+
+      </button>
+    </div>
+</div>
+</div>
+
+<div class = "row">
+<div class = "Column col-lg-2 col-md-6 col-xs-12">
+
+    <div class = "button">
+
+      <button id = "hydrogenBut">
+        <span>Hydrogen: <a id = 'counterHydrogen'> 0 </a>
+        <br>
+        <div id = HydrogenCost> </div>
+        </span>
+      </button>
+    </div>
+
+
+    <div class = "button">
+
+      <button id = 'heliumBut'>
+        <span>
+        Helium: <a id = 'counterHelium'> 0 </a>
+        <br>
+        <div id = HeliumCost> </div>
+          </span>
+
+      </button>
+    </div>
+</div>
+</div>
+
+<div class = "row">
+<div class = "Column col-lg-2 col-md-6 col-xs-12">
+      <div class = "button">
+
+        <button id = "H2But">
+          <span> H2: <a id = 'counterH2'> 0 </a>
+          <br>
+          <div id = H2Cost></div>
+          </span>
+            <i class="info"></i>
+            <div class="btn-tooltip" id = "H2Info"></div>
+        </button>
+      </div>
+</div>
+</div>
+
+<div class = "row">
+<div class = "Column col-lg-2 col-md-6 col-xs-12">
+    <div class = "button">
+      <button id = 'H2_StarBut' type = "button" class = "btn btn-outline-primary" >
+         <span> Hydrogen Star: <a id = 'counterH2_Star'> </a>
+         <i class="info"></i>
+        <div class="btn-tooltip" id = "H2_Star_Cost"></div>
+        <div class = "percent_left" id = "H2_Star_Percent_Left"></div>
+        </span>
+
+      </button>
+    </div>
+</div>
+</div>
+
+<div class = "row">
+<div class = "Column col-lg-2 col-md-6 col-xs-12">
+
+</div>
+</div>
+
+</div>
+
+
+
+
+  </div>
+  </div>
+
+
+<!-- Universe selection -->
+
+<div class="modal fade" id="selectUniverse" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Welcome to the Big Bang moment</h5>
+
+      </div>
+      <div class="modal-body">
+        You are on the start of the new Universe. You change the way it expands. You manage what does it consist of.
+        <br />
+        <br />
+
+        You are given a chance to choose the starting position. Take a responsibility carefully.
+      </div>
+
+      <div class="modal-footer">
+
+        <div class = "row">
+   
+    <div class = "col-md">
+        <button type="button" class="btn btn-secondary" id = "" data-dismiss="modal" data-toggle="tooltip" data-placement="bottom" title="Universe expands faster than ever">Flesh</button>
+        <button type="button" class="btn btn-secondary" id = "Variable" data-dismiss="modal" data-toggle="tooltip" data-placement="bottom" title="There will be much more atoms available from the start">Variable</button>
+    </div>
+  
+    <div class = "col-md">
+        <button type="button" class="btn btn-secondary" id = "Singularity" data-dismiss="modal">Distressed</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Launched</button>
+    </div>
+      
+    <div class = "col-md">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Empty space</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+
+
+<!--
+<script src="src/Stars.js"></script>
+<script src="src/Buttons.js"></script>
+<script src = "src/RefreshNumbers.js"></script>
+<script src="src/Player.js"></script>
+<script src ="src/Functions.js"></script>
+<script src = "src/StartingUniverse.js"></script>
+<script src = "src/SaveGame.js"></script>
+<script src = "src/Resources.js"></script>
+<script src="src/time.js"></script>
+-->
+
+
+
+
+
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+</html>

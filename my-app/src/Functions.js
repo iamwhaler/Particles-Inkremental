@@ -1,4 +1,6 @@
 /// interesting effects for randomization - calling funcation with an array as an argument http://learn.javascript.ru/call-apply
+import $ from 'jquery';
+
 
 export let getState = {
     StringsCost: '[' + 1 + ' ' + 'click]',
@@ -51,12 +53,8 @@ export let addRandomBasicParticle = function(player, mod1, mod2, mod3) {
 
 
 export let drawElement = function (element_id, text) {
-    try {
         document.getElementById(element_id).innerHTML = text;
-    }
-    catch (e) {
-        message("w error! element_id: " + element_id + " text:  " + text);
-    }
+ 
 };
 
 

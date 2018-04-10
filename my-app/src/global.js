@@ -1,12 +1,13 @@
-import _ from 'lodash'
+import _ from 'lodash';
+import $ from 'jquery'
 
-import { PlayerClass } from './src/Player.js';
-import { refreshNumbers, addRandomBasicParticle, getInfo, getState, checkPrevious } from './src/Functions.js'
-import { Atom, Molecule_T1, Organic_Molecule, Particle, String, Lepton} from './src/Resources.js'
-import { Star } from './src/Stars.js'
-import { saveGame, loadGame, resetGame } from './src/SaveGame.js'
-import { Universe } from './src/StartingUniverse.js'
-import { drawElement } from './src/Functions.js'
+import { PlayerClass } from './Player.js';
+import { refreshNumbers, addRandomBasicParticle, getInfo, getState, checkPrevious } from './Functions.js'
+import { Atom, Molecule_T1, Organic_Molecule, Particle, String, Lepton} from './Resources.js'
+import { Star } from './Stars.js'
+import { saveGame, loadGame, resetGame } from './SaveGame.js'
+import { Universe } from './StartingUniverse.js'
+import { drawElement } from './Functions.js'
 
 
 
@@ -51,8 +52,8 @@ $(document).ready(function () {
 
   let getUniverseHeat = function(player){
  // previous h2 let numberOfStars = Player.H2_Star + Player.He_Star;
-  let existingStars = Player.H2_Star + Player.He_Star;
-  let universeHeat = numberOfStars  / existingStars + (numberOfStrings/sec)
+ // let existingStars = Player.H2_Star + Player.He_Star;
+//  let universeHeat = numberOfStars  / existingStars + (numberOfStrings/sec)
 }
 
     /// navigation tabs ///
@@ -66,8 +67,8 @@ $(document).ready(function () {
 
 
     /// Starting Universes ///
-    $("#selectUniverse").modal('toggle');
-    $('[data-toggle="tooltip"]').tooltip();
+//    $("#selectUniverse").modal('toggle');
+//    $('[data-toggle="tooltip"]').tooltip();
 
     /// BUTTONS SETUP ///
     $("#stringBut").click( () => Strings.cost(Player) );
