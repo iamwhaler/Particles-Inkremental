@@ -124,6 +124,7 @@ export class Molecule_T1 {
         }
 
         else if (this.name = "He2") {
+            
             player[this.name] += this.reward;
             player.Helium -= this.helium
         }

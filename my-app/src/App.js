@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 import 'react-bootstrap';
-
+import './global.js'
 import './App.css';
 import './index.js';
 
-import './global.js'
 
 class App extends Component {
 	constructor(props) {
 	
 	super(props);
-	
+
 	this.state = {
 
 		gameSpeed: 1,
@@ -18,22 +17,27 @@ class App extends Component {
 		tick: 0,
 
 	}
-
-	this.tick = this.tick.bind(this);
-
 };
 
   render() {
     return (      
-       <div> 
-        <div id = "resetGame">
-          <button>Reset game</button>
-        </div>
+        <div class = "row">
+        <div class = "col-md-4">
+          
 
-        <div id = "saveGame">
-          <button>Save game</button>
+          <span>Protons: ${this.Player.Protons} </span> 
+          <span>Electrons: ${this.Player.Electrons.toFixed(2)} </span>       
+          <span>Neutrons: ${this.Player.Neutrons} </span>
+
+
         </div>
+        <div class = "col-md-4">
+          <span>Hydrogen: ${this.Player.Hydrogen} </span>
+          <span>Helium: ${this.Player.Helium} </span>          
+
         </div>
+      </div> 
+
     );
   }
 }

@@ -47,7 +47,7 @@ $(document).ready(function () {
 
 
 
-    let Player = new PlayerClass();
+     let Player = new PlayerClass();
 
 
   let getUniverseHeat = function(player){

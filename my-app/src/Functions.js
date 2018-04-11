@@ -77,14 +77,6 @@ export let refreshNumbers = function(player) {
 
 
     drawElement("assets-info", `
-      <div class = "row">
-        <div class = "col-md-6">
-          <span>Neutrons: ${player.Neutrons} </span>
-        </div>
-        <div class = "col-md-6">
-          <span>Protons: ${player.Protons} </span>
-        </div>
-      </div> 
       `);
 
     drawElement("stringsInfo", `
