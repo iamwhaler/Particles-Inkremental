@@ -9,14 +9,14 @@ export class String {
     }
 
     cost(player) {
-        console.log("Strings Cost")
+        console.log("Strings Cost");
         player[this.name] += this.reward;
         addRandomBasicParticle(player, 1, 1, 0.09);
         refreshNumbers(player);
     }
 
     convertString(player) {
-        console.log('string conversion')
+        console.log('string conversion');
         if (player.Strings > 1) {
             addRandomBasicParticle(player, 1, 1, 0.09);
         }
@@ -36,7 +36,7 @@ export class Lepton {
           player[this.name] += this.reward;
           player.Strings--;
         }
-        let checkAutomation = setInterval(function(){
+        setInterval(function(){
                if (convertedFromStrings>5){
               player[this.name] += this.reward + (convertedFromStrings*(player.Ups+player.Downs));    
                 }
@@ -88,9 +88,8 @@ export class Atom {
     }
 
     cost(player) {
-        console.log('atom cost')
+        console.log('atom cost');
         if (player.Electrons >= this.electrons && player.Neutrons >= this.neutrons && player.Protons >= this.protons) {
-            console.warn('calculation in progress')
             player[this.name] += this.reward;
             player.Protons -= this.protons;
             player.Electrons -= this.electrons;
@@ -109,7 +108,7 @@ export class Molecule_T1 {
         this.name = name;
         this.reward = reward;
         this.hydrogen = hydrogen;
-        this.helium = helium
+        this.helium = helium;
         this.carbon = carbon;
         this.oxygen = oxygen;
     }
@@ -117,7 +116,7 @@ export class Molecule_T1 {
     cost(player) {
         if(this.name = "H2") {
             if(player.Hydrogen>=this.hydrogen){
-            console.log("H2 cost substraction")
+            console.log("H2 cost substraction");
             player[this.name] += this.reward;
             player.Hydrogen -= this.hydrogen;
         }

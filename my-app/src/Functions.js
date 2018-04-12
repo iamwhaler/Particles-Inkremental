@@ -25,7 +25,7 @@ export let getState = {
     CarbonCost: '[6E 6P 6N]',
 
     OxygenCost: '[8E 8P 8(9)N]'
-}
+};
 
 function getProbability(min, max) {
     return Math.random() * (max - min) + min
@@ -36,7 +36,7 @@ export let checkPrevious = function(player) {
        while(player[this.name]<2) { 
               player.Strings += (0.13 * player.H2_Star);
         }
-      }
+      };
  
 
 export let addRandomBasicParticle = function(player, mod1, mod2, mod3) {
@@ -49,7 +49,7 @@ export let addRandomBasicParticle = function(player, mod1, mod2, mod3) {
     else if (randomNumber < downProb) { player.Downs += mod2 }
     else { player.Electrons += mod3 }
 
-}
+};
 
 
 export let drawElement = function (element_id, text) {
@@ -133,6 +133,6 @@ export let getInfo = function(player, star) {
 //   $('#HydrogenCost').html(getState.HydrogenCost)
 //   $('#HeliumCost').html(getState.HeliumCost)
 
-   $('#H2_Star_Cost').html(player.H2 + "/" + star.H2)
+   $('#H2_Star_Cost').html(player.H2 + "/" + star.H2);
    $('#H2_Star_Percent_Left').html( percentLeft( player.H2, star.H2 ) + "%" );
 }

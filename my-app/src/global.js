@@ -7,8 +7,6 @@ import { Atom, Molecule_T1, Organic_Molecule, Particle, String, Lepton} from './
 import { Star } from './Stars.js'
 import { saveGame, loadGame, resetGame } from './SaveGame.js'
 import { Universe } from './StartingUniverse.js'
-import { drawElement } from './Functions.js'
-
 
 
 
@@ -94,7 +92,7 @@ $(document).ready(function () {
     if (localStorage.getItem("game") === null) {
         saveGame(Player);
     }
-    setInterval(() => saveGame(Player), 100000)
+    setInterval(() => saveGame(Player), 100000);
     loadGame(Player);
 
     getInfo(Player, H2_Star);
