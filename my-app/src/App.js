@@ -3,33 +3,39 @@ import 'react-bootstrap';
 import './global.js'
 import './App.css';
 import './index.js';
-import { PlayerClass } from './Player.js';
+import { Player } from './global.js';
 
 
-  let Player = new PlayerClass();
-  class App extends Component {
+
+class App extends Component {
 	constructor(props) {
-	
 	super(props);
+	};
+
+	render() {
+
+		console.log(Player);
+
+		return <div>
+            <div className = "row">
+                <div className = "col-md-4">
+
+                    <span>Protons: {Player.Protons} </span>
+                    <span>Electrons: {Player.Electrons.toFixed(2)} </span>
+                    <span>Neutrons: {Player.Neutrons} </span>
 
 
+                </div>
+                <div className = "col-md-4">
+                    <span>Hydrogen: {Player.Hydrogen} </span>
+                    <span>Helium: {Player.Helium} </span>
+
+                </div>
+            </div>
 
 
-	this.state = {
-
-		gameSpeed: 1,
-
-		tick: 0,
-
+        </div>;
 	}
-
-};
-
-
-
-  render() {
-    return;
-  }
 }
 
 export default App;

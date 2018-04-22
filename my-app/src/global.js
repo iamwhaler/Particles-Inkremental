@@ -1,13 +1,14 @@
 import _ from 'lodash';
 import $ from 'jquery'
 
-import { PlayerClass } from './Player.js';
+import { PlayerClass, defaul_player } from './Player.js';
 import { refreshNumbers, addRandomBasicParticle, getInfo, getState, checkPrevious } from './Functions.js'
 import { Atom, Molecule_T1, Organic_Molecule, Particle, String, Lepton} from './Resources.js'
 import { Star } from './Stars.js'
 import { saveGame, loadGame, resetGame } from './SaveGame.js'
 import { Universe } from './StartingUniverse.js'
 
+export let Player = defaul_player;
 
 
 $(document).ready(function () {
@@ -43,9 +44,6 @@ $(document).ready(function () {
     const H2_Star = new Star("H2_Star", 1, "H2", 50, 0, 0);
 
 
-
-
-     let Player = new PlayerClass();
 
 
   let getUniverseHeat = function(player){

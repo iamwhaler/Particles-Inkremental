@@ -32,12 +32,6 @@ function getProbability(min, max) {
 }
 
 
-export let checkPrevious = function(player) {
-       while(player[this.name]<2) { 
-              player.Strings += (0.13 * player.H2_Star);
-        }
-      };
- 
 
 export let addRandomBasicParticle = function(player, mod1, mod2, mod3) {
 
@@ -76,8 +70,7 @@ export let refreshNumbers = function(player) {
     drawElement("counterH2_Star", player.H2_Star.toFixed(2));
 
 
-    drawElement("assets-info", `
-      `);
+
 
     drawElement("stringsInfo", `
         <div class = "col-lg-12 infoBar">${getState.StringsInfo}</div>
@@ -107,12 +100,6 @@ export let refreshNumbers = function(player) {
 
 
 
-}
-
-
-export let percentLeft = function(resource, finalAmount) {
-    let currentPercent = (resource * 100) / finalAmount;
-    return currentPercent;
 }
 
 
